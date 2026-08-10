@@ -378,5 +378,21 @@ function render(){
 }
 applyTheme();render();
 </script>
-<script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js"))}</script>
-</body></html>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js"))}</scr BBipt><script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js", {
+      updateViaCache: "none"
+    }).then(registration => {
+      console.log("Mimori service worker registered");
+
+      registration.update();
+    }).catch(error => {
+      console.error("Service worker registration failed:", error);
+    });
+  });
+}
+</script>
+
+</body>
+</html>
