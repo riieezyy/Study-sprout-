@@ -2,24 +2,71 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>StudySprout 🎀</title><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#f4bfd0">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f3bfd2">
+<meta name="description" content="StudySprout — your cute little college life planner">
+<title>StudySprout 2.0 🎀</title>
+<link rel="manifest" href="manifest.webmanifest">
 <style>
-:root{--bg:#fffaf7;--card:#fff;--ink:#403746;--muted:#8d8290;--accent:#c9a7e8;--accent2:#f4bfd0;--green:#a9d8c0;--yellow:#f6dda0;--danger:#e8a6a6;--shadow:0 10px 30px rgba(88,65,91,.10)}
-*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#fffaf7,#f7f0fb);color:var(--ink);font:15px system-ui,-apple-system,Segoe UI,sans-serif}
-button,input,select,textarea{font:inherit}button{border:0;cursor:pointer}
-.app{max-width:1100px;margin:auto;padding:18px 16px 90px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}.brand{display:flex;align-items:center;gap:10px}.logo{width:48px;height:48px;border-radius:16px;background:#f4bfd0;display:grid;place-items:center;font-size:25px;box-shadow:var(--shadow)}h1{font-size:23px;margin:0}.sub{color:var(--muted);font-size:12px}
-.pill{background:#fff;border:1px solid #eee1ee;padding:8px 12px;border-radius:999px;color:var(--ink)}
-.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}.card{background:rgba(255,255,255,.86);border:1px solid rgba(232,218,234,.8);border-radius:22px;padding:16px;box-shadow:var(--shadow)}.span12{grid-column:span 12}.span8{grid-column:span 8}.span6{grid-column:span 6}.span4{grid-column:span 4}
-.hero{background:linear-gradient(135deg,#fff,#f7e9f5);position:relative;overflow:hidden}.hero:after{content:"✦  ♡  ✿  ✨";position:absolute;right:18px;top:15px;color:#d6b6dd;letter-spacing:7px}.hero h2{font-size:28px;margin:3px 0 6px}.hero p{color:var(--muted);margin:0 0 14px}
-.statrow{display:flex;gap:9px;flex-wrap:wrap}.stat{background:#fff8fc;border-radius:16px;padding:10px 12px;min-width:110px}.stat b{display:block;font-size:19px}.label{font-size:12px;color:var(--muted)}
-.progress{height:9px;background:#eee7ef;border-radius:99px;overflow:hidden;margin:9px 0}.bar{height:100%;background:linear-gradient(90deg,var(--accent2),var(--accent));border-radius:99px}
-nav{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border:1px solid #eadfeb;border-radius:22px;padding:7px;display:flex;gap:4px;box-shadow:0 10px 35px rgba(50,30,60,.15);z-index:5}nav button{background:transparent;color:var(--muted);padding:9px 12px;border-radius:16px}nav button.active{background:#f6e8f5;color:#6e5577}
-.section{display:none}.section.active{display:block}.row{display:flex;justify-content:space-between;align-items:center;gap:10px}.list{display:grid;gap:9px}.item{background:#fffafa;border:1px solid #eee5ef;border-radius:15px;padding:11px;display:flex;align-items:center;gap:10px}.item.done{opacity:.58;text-decoration:line-through}.tiny{font-size:12px;color:var(--muted)}.tag{display:inline-block;padding:4px 8px;border-radius:999px;background:#f2e8f5;font-size:11px}.btn{background:#8f70a4;color:#fff;padding:10px 13px;border-radius:13px}.btn.soft{background:#f6eaf5;color:#6e5577}.btn.danger{background:#f3d5d5;color:#7e4c4c}.btn.green{background:#dff1e8;color:#426d59}.btn.big{padding:13px 18px;border-radius:16px;font-weight:700}.modal{position:fixed;inset:0;background:rgba(48,35,51,.35);display:none;align-items:center;justify-content:center;padding:18px;z-index:10}.modal.show{display:flex}.modalbox{background:#fff;border-radius:24px;padding:19px;max-width:520px;width:100%;max-height:90vh;overflow:auto}.form{display:grid;gap:10px}.form input,.form select,.form textarea{width:100%;border:1px solid #e7dce9;border-radius:12px;padding:10px;background:#fff}.form textarea{min-height:80px}.actions{display:flex;justify-content:flex-end;gap:8px;margin-top:8px}.pet{font-size:54px;text-align:center}.empty{text-align:center;padding:18px;color:var(--muted)}.dangerText{color:#a05b5b;font-weight:700}.safe{color:#4d856b;font-weight:700}.quest{background:#fff6df}.boss{background:linear-gradient(135deg,#fff3f6,#f3eafa)}.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}.day{min-height:60px;border:1px solid #eee5ef;border-radius:10px;padding:6px;background:#fff}.today{outline:2px solid #d7b5dd}.dot{font-size:10px;color:#7b6382}.settings{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.theme{height:45px;border-radius:14px;border:2px solid #fff;box-shadow:0 0 0 1px #ddd}.theme[data-t="pink"]{background:#f8d7e3}.theme[data-t="lav"]{background:#e4d4f3}.theme[data-t="blue"]{background:#d7eafa}.theme[data-t="sage"]{background:#d8ebdf}.theme[data-t="cream"]{background:#f5e8c9}
-@media(max-width:700px){.span8,.span6,.span4{grid-column:span 12}.app{padding:12px 12px 90px}.hero h2{font-size:24px}nav button{padding:8px 9px;font-size:12px}.settings{grid-template-columns:repeat(2,1fr)}}
+:root{
+ --bg:#fff9f6;--bg2:#f8effb;--card:rgba(255,255,255,.86);--ink:#413747;--muted:#8d8190;
+ --accent:#a878bd;--accent2:#f2b8cf;--accent3:#d7c1ed;--good:#a8d9c1;--warn:#f5dda1;--bad:#e6aaaa;
+ --line:#eadfeb;--shadow:0 14px 35px rgba(84,61,89,.12);--radius:22px
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:ui-rounded,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink)}
+body{background:var(--bg);overflow-x:hidden}
+body:before,body:after{content:"";position:fixed;z-index:-2;pointer-events:none;border-radius:50%;filter:blur(12px);opacity:.75}
+body:before{width:360px;height:360px;left:-120px;top:60px;background:radial-gradient(circle,#f6d6e7 0,#f6d6e700 70%)}
+body:after{width:420px;height:420px;right:-160px;bottom:40px;background:radial-gradient(circle,#d9cff3 0,#d9cff300 70%)}
+body.theme-pink{--bg:#fff9f6;--bg2:#f8effb}
+body.theme-lav{--bg:#fbf9ff;--bg2:#eee8fb;--accent:#8f75bb;--accent2:#d7c5ee}
+body.theme-blue{--bg:#f7fbff;--bg2:#eaf5ff;--accent:#6e9fbd;--accent2:#bcdcf0}
+body.theme-sage{--bg:#f8fcf8;--bg2:#e9f5ed;--accent:#6c9d83;--accent2:#c5e4d2}
+body.theme-peach{--bg:#fffaf5;--bg2:#fff0e4;--accent:#b57e67;--accent2:#f5c5a9}
+body.theme-cream{--bg:#fffdf4;--bg2:#f7f0d9;--accent:#a68d5b;--accent2:#ecd9a2}
+body.theme-night{--bg:#1d1b2c;--bg2:#29243d;--card:rgba(45,40,62,.9);--ink:#f5eef9;--muted:#b8acc1;--line:#4a4057;--accent:#c8a8e8;--accent2:#e4a9c5}
+body.theme-night .input,body.theme-night input,body.theme-night select,body.theme-night textarea{background:#28243a;color:var(--ink)}
+body.theme-night .nav,body.theme-night .modalbox{background:rgba(42,37,57,.96)}
+body.theme-night .item,body.theme-night .day,body.theme-night .stat{background:rgba(50,44,68,.88)}
+body.theme-night .hero{background:linear-gradient(135deg,#29243a,#3b3048)}
+body.theme-night .btn.soft{background:#403651;color:#e9dff0}
+body.bg-garden{background-image:radial-gradient(circle at 12% 18%,rgba(255,180,206,.22) 0 3px,transparent 4px),radial-gradient(circle at 86% 24%,rgba(190,165,224,.25) 0 3px,transparent 4px),radial-gradient(circle at 22% 82%,rgba(164,215,191,.22) 0 3px,transparent 4px),linear-gradient(135deg,var(--bg),var(--bg2))}
+body.bg-cloudy{background-image:radial-gradient(ellipse at 20% 12%,rgba(255,255,255,.9) 0 8%,transparent 9%),radial-gradient(ellipse at 78% 22%,rgba(255,255,255,.75) 0 10%,transparent 11%),linear-gradient(145deg,var(--bg),var(--bg2))}
+body.bg-coquette{background-image:radial-gradient(circle at 15% 20%,transparent 0 34px,rgba(241,184,207,.13) 35px 36px,transparent 37px),radial-gradient(circle at 85% 72%,transparent 0 45px,rgba(201,168,232,.12) 46px 47px,transparent 48px),linear-gradient(145deg,var(--bg),var(--bg2))}
+body.bg-studycore{background-image:repeating-linear-gradient(0deg,transparent 0 29px,rgba(166,133,177,.07) 30px),linear-gradient(145deg,var(--bg),var(--bg2))}
+body.bg-nightstudy{background-image:radial-gradient(circle at 80% 14%,#fff6c033 0 2px,transparent 3px),radial-gradient(circle at 20% 30%,#fff6c033 0 1px,transparent 2px),linear-gradient(145deg,var(--bg),var(--bg2))}
+body.bg-cafe{background-image:radial-gradient(circle at 20% 20%,rgba(176,129,96,.09) 0 3px,transparent 4px),radial-gradient(circle at 80% 65%,rgba(241,170,180,.12) 0 3px,transparent 4px),linear-gradient(145deg,var(--bg),var(--bg2))}
+.app{max-width:1120px;margin:auto;padding:16px 14px 104px;position:relative}
+.app:before{content:"✦  ˚₊‧  ♡  ✿  ✧  🎀  ☁  ✦";display:block;position:fixed;top:8px;left:50%;transform:translateX(-50%);color:#bca3c7;opacity:.45;letter-spacing:9px;font-size:12px;pointer-events:none;z-index:-1;white-space:nowrap}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:4px 0 16px}
+.brand{display:flex;align-items:center;gap:10px}.logo{width:50px;height:50px;border-radius:17px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent2),var(--accent3));font-size:27px;box-shadow:var(--shadow)}
+h1{font-size:23px;margin:0}.sub,.tiny{font-size:12px;color:var(--muted)}
+.pill{background:var(--card);border:1px solid var(--line);padding:9px 12px;border-radius:999px;box-shadow:0 5px 18px rgba(80,55,85,.07)}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}.span12{grid-column:span 12}.span8{grid-column:span 8}.span6{grid-column:span 6}.span4{grid-column:span 4}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);backdrop-filter:blur(10px)}
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(248,232,247,.9));min-height:180px}.hero:after{content:"✦ ♡ ✿ ✨ ☁";position:absolute;right:18px;top:16px;color:#c8a9d0;letter-spacing:7px}.hero h2{font-size:28px;max-width:650px;margin:7px 0}.hero p{color:var(--muted);max-width:650px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px}.row.wrap{flex-wrap:wrap}.list{display:grid;gap:9px}
+.item{background:rgba(255,250,252,.86);border:1px solid var(--line);border-radius:16px;padding:11px;display:flex;align-items:center;gap:10px}.item.done{opacity:.62;text-decoration:line-through}
+.statrow{display:flex;gap:9px;flex-wrap:wrap}.stat{background:rgba(255,248,252,.9);border-radius:16px;padding:11px 13px;min-width:108px}.stat b{display:block;font-size:19px}.label{font-size:12px;color:var(--muted)}
+.progress{height:9px;background:#eee7ef;border-radius:99px;overflow:hidden;margin:8px 0}.bar{height:100%;background:linear-gradient(90deg,var(--accent2),var(--accent));border-radius:99px;transition:width .35s ease}
+.tag{display:inline-block;padding:4px 8px;border-radius:999px;background:rgba(231,216,242,.72);font-size:11px}.btn{background:var(--accent);color:#fff;padding:10px 13px;border-radius:13px;font-weight:650}.btn.soft{background:#f4eaf6;color:#6d5676}.btn.green{background:#dff1e8;color:#426d59}.btn.danger{background:#f2d5d5;color:#7f4d4d}.btn.big{padding:13px 18px;border-radius:16px}
+button:active{transform:scale(.98)}button:disabled{opacity:.5;cursor:not-allowed}
+.nav{position:fixed;bottom:max(10px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:23px;padding:7px;display:flex;gap:4px;box-shadow:0 12px 38px rgba(50,30,60,.17);z-index:30}.nav button{background:transparent;color:var(--muted);padding:9px 11px;border-radius:16px;font-size:12px}.nav button.active{background:#f3e6f5;color:#6e5577}
+.section{display:none}.section.active{display:block}.pet{font-size:56px;text-align:center}.empty{text-align:center;padding:22px;color:var(--muted)}
+.modal{position:fixed;inset:0;background:rgba(48,35,51,.4);display:none;align-items:center;justify-content:center;padding:14px;z-index:100}.modal.show{display:flex}.modalbox{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:25px;padding:19px;max-width:600px;width:100%;max-height:92vh;overflow:auto;box-shadow:0 25px 70px rgba(35,25,40,.28)}
+.form{display:grid;gap:10px}.form input,.form select,.form textarea,input,select,textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:10px;background:#fff;color:var(--ink)}.form textarea,textarea{min-height:85px}.actions{display:flex;justify-content:flex-end;gap:8px;margin-top:8px;flex-wrap:wrap}
+.actions.left{justify-content:flex-start}.checkrow{display:flex;gap:8px;align-items:center}.checkrow input{width:auto}
+.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}.dow{font-size:11px;color:var(--muted);text-align:center;padding:4px}.day{min-height:82px;border:1px solid var(--line);border-radius:11px;padding:6px;background:rgba(255,255,255,.7);cursor:pointer}.day:hover{transform:translateY(-1px)}.day.today{outline:2px solid #d7b5dd}.day.selected{box-shadow:0 0 0 2px var(--accent)}.dot{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:4px}.event-task{color:#80618c}.event-exam{color:#ad6578}.event-study{color:#4d856b}.event-event{color:#8b6e43}
+.boss{background:linear-gradient(135deg,rgba(255,241,246,.95),rgba(241,233,250,.92))}.quest{background:#fff6df}.xpflash{position:fixed;right:18px;top:78px;z-index:120;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px 13px;box-shadow:var(--shadow);animation:pop .7s ease forwards}.toast{position:fixed;left:50%;bottom:92px;transform:translateX(-50%);z-index:120;background:#3e3545;color:#fff;padding:11px 15px;border-radius:999px;box-shadow:var(--shadow);animation:toast 2.4s ease forwards}@keyframes pop{0%{transform:translateY(-8px);opacity:0}20%{opacity:1}100%{transform:translateY(-25px);opacity:0}}@keyframes toast{0%{opacity:0;transform:translate(-50%,10px)}15%,80%{opacity:1;transform:translate(-50%,0)}100%{opacity:0;transform:translate(-50%,-6px)}}
+.themegrid,.bggrid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.choice{padding:12px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.5);cursor:pointer;text-align:center}.choice.selected{outline:2px solid var(--accent)}.swatch{height:52px;border-radius:12px;margin-bottom:7px}.sw-pink{background:linear-gradient(135deg,#f8d7e3,#e4d4f3)}.sw-lav{background:linear-gradient(135deg,#e4d4f3,#c7b8e7)}.sw-blue{background:linear-gradient(135deg,#d7eafa,#bcdcf0)}.sw-sage{background:linear-gradient(135deg,#d8ebdf,#b9d9c6)}.sw-peach{background:linear-gradient(135deg,#f7d0bc,#f3b5b7)}.sw-cream{background:linear-gradient(135deg,#f5e8c9,#fff9df)}.sw-night{background:linear-gradient(135deg,#211e33,#514467)}
+.flashcard{min-height:250px;display:grid;place-items:center;text-align:center;padding:25px;border-radius:24px;background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(247,234,249,.95));border:1px solid var(--line);cursor:pointer;position:relative}.flashcard .answer{display:none}.flashcard.flipped .question{display:none}.flashcard.flipped .answer{display:block}.flashcard .hint{position:absolute;bottom:12px;font-size:11px;color:var(--muted)}
+.badge{display:inline-flex;align-items:center;gap:5px;padding:6px 9px;border-radius:999px;background:#f8eef8;font-size:11px}.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.smallcaps{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+@media(max-width:760px){.span8,.span6,.span4{grid-column:span 12}.app{padding:12px 10px 102px}.hero h2{font-size:24px}.nav{max-width:calc(100vw - 14px);width:max-content}.nav button{padding:8px 8px;font-size:11px}.themegrid,.bggrid{grid-template-columns:repeat(2,1fr)}.day{min-height:68px;font-size:12px}.top .pill{font-size:11px}.stat{min-width:95px}}
 </style>
 </head>
-<body>
+<body class="theme-pink bg-garden">
 <div class="app">
 <header class="top">
   <div class="brand"><div class="logo">🎀</div><div><h1>StudySprout</h1><div class="sub">your cute little college life ✦</div></div></div>
@@ -28,94 +75,308 @@ nav{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);background:rg
 
 <section id="home" class="section active">
 <div class="grid">
-  <div class="card hero span12"><div class="sub" id="date"></div><h2 id="greeting">Okay bestie, let's lock in.</h2><p id="quote">The syllabus isn't going to defeat itself.</p><button class="btn big" onclick="lockIn()">🔒 LOCK IN</button></div>
-  <div class="card span8"><div class="row"><h3>✨ Today's vibe</h3><span class="tag" id="moodTag">Functioning</span></div><div class="statrow"><div class="stat"><b id="taskCount">0</b><span class="label">tasks left</span></div><div class="stat"><b id="streak">0 🔥</b><span class="label">study streak</span></div><div class="stat"><b id="attendanceOverall">—</b><span class="label">attendance</span></div></div><div style="margin-top:13px"><div class="row"><span class="label">overall syllabus</span><b id="overallProgress">0%</b></div><div class="progress"><div class="bar" id="overallBar"></div></div></div></div>
-  <div class="card span4"><div class="pet" id="pet">🐱</div><div style="text-align:center"><b id="petMsg">WAIT... WE'RE ACTUALLY LOCKING IN??</b><div class="tiny" style="margin-top:5px">your study buddy</div></div></div>
+  <div class="card hero span12">
+    <div class="sub" id="date"></div><h2 id="greeting">Okay bestie, let's lock in.</h2><p id="quote">The syllabus isn't going to defeat itself.</p>
+    <div class="actions left"><button class="btn big" onclick="lockIn()">🔒 LOCK IN</button><button class="btn soft" onclick="moodCheck()">✨ What's the vibe?</button></div>
+  </div>
+  <div class="card span8">
+    <div class="row"><h3>✨ Today's dashboard</h3><span class="tag" id="moodTag">Functioning</span></div>
+    <div class="statrow">
+      <div class="stat"><b id="taskCount">0</b><span class="label">tasks left</span></div>
+      <div class="stat"><b id="streak">0 🔥</b><span class="label">study streak</span></div>
+      <div class="stat"><b id="attendanceOverall">—</b><span class="label">attendance</span></div>
+      <div class="stat"><b id="studyHours">0h</b><span class="label">study time</span></div>
+    </div>
+    <div style="margin-top:13px"><div class="row"><span class="label">overall syllabus</span><b id="overallProgress">0%</b></div><div class="progress"><div class="bar" id="overallBar"></div></div></div>
+  </div>
+  <div class="card span4"><div class="pet" id="pet">🐱</div><div style="text-align:center"><b id="petMsg">oh hiiii 👀</b><div class="tiny" style="margin-top:5px">your study buddy</div></div></div>
   <div class="card span6"><div class="row"><h3>🔥 What's next</h3><button class="btn soft" onclick="show('tasks')">See all</button></div><div id="next"></div></div>
   <div class="card span6"><div class="row"><h3>🎯 Today's quests</h3><span class="tag">+100 bonus</span></div><div id="quests"></div></div>
   <div class="card span12 boss"><div class="row"><div><h3>⚔️ Current boss</h3><div class="tiny" id="bossName">No exam added yet</div></div><div id="bossHp">♡♡♡♡♡</div></div><div class="progress"><div class="bar" id="bossBar" style="width:0%"></div></div><div class="tiny">Finish syllabus + revision to defeat the boss.</div></div>
 </div>
 </section>
 
-<section id="tasks" class="section"><div class="card"><div class="row"><div><h2>✅ Tasks</h2><div class="tiny">Get it out of your head and into the planner.</div></div><button class="btn" onclick="openTask()">＋ Add task</button></div><div class="list" id="taskList" style="margin-top:14px"></div></div></section>
+<section id="tasks" class="section">
+<div class="card"><div class="row wrap"><div><h2>✅ Tasks</h2><div class="tiny">Get it out of your head and into the planner.</div></div><button class="btn" onclick="openTask()">＋ Add task</button></div><div class="list" id="taskList" style="margin-top:14px"></div></div>
+</section>
 
-<section id="subjects" class="section"><div class="card"><div class="row"><div><h2>📚 Subjects & syllabus</h2><div class="tiny">Units → chapters → topics.</div></div><button class="btn" onclick="openSubject()">＋ Subject</button></div><div class="list" id="subjectList" style="margin-top:14px"></div></div>
-<div class="card" style="margin-top:14px"><h2>📝 Exams</h2><button class="btn" onclick="openExam()">＋ Exam</button><div class="list" id="examList" style="margin-top:12px"></div></div></section>
+<section id="subjects" class="section">
+<div class="card"><div class="row wrap"><div><h2>📚 Subjects & syllabus</h2><div class="tiny">Units → chapters → topics.</div></div><button class="btn" onclick="openSubject()">＋ Subject</button></div><div class="list" id="subjectList" style="margin-top:14px"></div></div>
+<div class="card" style="margin-top:14px"><div class="row"><h2>📝 Exams</h2><button class="btn" onclick="openExam()">＋ Exam</button></div><div class="list" id="examList" style="margin-top:12px"></div></div>
+<div class="card" style="margin-top:14px"><div class="row"><h2>🧠 Study Cards</h2><button class="btn" onclick="openDeck()">＋ Deck</button></div><div class="list" id="deckList" style="margin-top:12px"></div></div>
+</section>
 
-<section id="calendar" class="section"><div class="card"><div class="row"><div><h2>📅 Calendar</h2><div class="tiny" id="monthTitle"></div></div><div><button class="btn soft" onclick="prevMonth()">‹</button> <button class="btn soft" onclick="nextMonth()">›</button></div></div><div class="calendar" id="calendarGrid" style="margin-top:12px"></div></div>
-<div class="card" style="margin-top:14px"><h2>🗓️ Timetable / attendance</h2><div class="tiny">Add lectures directly to attendance from the attendance panel below.</div><button class="btn" style="margin-top:10px" onclick="openLecture()">＋ Add lecture</button><div class="list" id="lectureList" style="margin-top:12px"></div></div></section>
+<section id="calendar" class="section">
+<div class="card">
+ <div class="row wrap"><div><h2>📅 Calendar</h2><div class="tiny" id="monthTitle"></div></div><div class="actions"><button class="btn soft" onclick="prevMonth()">‹</button><button class="btn soft" onclick="goToday()">Today</button><button class="btn soft" onclick="nextMonth()">›</button></div></div>
+ <div class="calendar" id="calendarGrid" style="margin-top:12px"></div>
+</div>
+<div class="card" style="margin-top:14px"><div class="row wrap"><div><h3 id="selectedTitle">Selected day</h3><div class="tiny">Tap any date to see or add plans.</div></div><button class="btn" onclick="openCalendarItem()">＋ Add to date</button></div><div class="list" id="selectedEvents" style="margin-top:12px"></div></div>
+<div class="card" style="margin-top:14px"><div class="row"><div><h2>🗓️ Timetable</h2><div class="tiny">Tap a lecture to mark attendance.</div></div><button class="btn" onclick="openLecture()">＋ Lecture</button></div><div class="list" id="lectureList" style="margin-top:12px"></div></div>
+</section>
 
-<section id="progress" class="section"><div class="grid">
-<div class="card span6"><h2>📊 Progress</h2><div id="progressList"></div></div>
-<div class="card span6"><h2>🏫 Attendance</h2><button class="btn" onclick="openAttendance()">＋ Add attendance</button><div id="attendanceList" style="margin-top:12px"></div></div>
+<section id="cards" class="section">
+<div class="card"><div class="row wrap"><div><h2>🧠 Study Cards</h2><div class="tiny">Flip, remember, repeat.</div></div><button class="btn" onclick="openDeck()">＋ New deck</button></div><div id="studyArea" style="margin-top:14px"></div></div>
+</section>
+
+<section id="progress" class="section">
+<div class="grid">
+<div class="card span6"><div class="row"><h2>📊 Progress</h2><button class="btn soft" onclick="shareProgress()">📤 Share</button></div><div id="progressList"></div></div>
+<div class="card span6"><div class="row"><h2>🏫 Attendance</h2><button class="btn" onclick="openAttendance()">＋ Subject</button></div><div id="attendanceList" style="margin-top:12px"></div></div>
 <div class="card span6"><h2>🏆 Achievements</h2><div id="achievements"></div></div>
 <div class="card span6"><h2>🎁 Collection</h2><div id="collection"></div></div>
-<div class="card span12"><h2>🎀 Customize</h2><div class="settings" id="themes">
-<div class="theme" data-t="pink" onclick="theme('pink')"></div><div class="theme" data-t="lav" onclick="theme('lav')"></div><div class="theme" data-t="blue" onclick="theme('blue')"></div><div class="theme" data-t="sage" onclick="theme('sage')"></div><div class="theme" data-t="cream" onclick="theme('cream')"></div></div></div>
-</div></section>
+<div class="card span12"><div class="row"><h2>🎀 Customize</h2><button class="btn soft" onclick="openCustomize()">✨ Open</button></div><div class="tiny">Make the planner feel like yours.</div></div>
+</div>
+</section>
 </div>
 
-<nav>
-<button class="active" onclick="show('home',this)">🏠 Home</button><button onclick="show('tasks',this)">✅ Tasks</button><button onclick="show('subjects',this)">📚 Subjects</button><button onclick="show('calendar',this)">📅 Calendar</button><button onclick="show('progress',this)">✨ Progress</button>
+<nav class="nav">
+<button class="active" onclick="show('home',this)">🏠 Home</button>
+<button onclick="show('tasks',this)">✅ Tasks</button>
+<button onclick="show('subjects',this)">📚 Subjects</button>
+<button onclick="show('calendar',this)">📅 Calendar</button>
+<button onclick="show('cards',this)">🧠 Cards</button>
+<button onclick="show('progress',this)">✨ More</button>
 </nav>
 
 <div class="modal" id="modal"><div class="modalbox" id="modalbox"></div></div>
 
 <script>
-const key='studysprout-v1';
-let S=JSON.parse(localStorage.getItem(key)||'null')||{tasks:[],subjects:[],exams:[],attendance:[],lectures:[],xp:0,streak:0,lastStudy:null,theme:'pink',mood:'🙂 Functioning',rewards:['🎀 Starter Bow'],pet:'🐱'};
-let calDate=new Date();
+const KEY='studysprout-v2';
+const OLD='studysprout-v1';
+const defaults={tasks:[],subjects:[],exams:[],attendance:[],lectures:[],events:[],studySessions:[],decks:[],xp:0,streak:0,lastStudy:null,studyMs:0,theme:'pink',background:'garden',mood:'🙂 Functioning',rewards:['🎀 Starter Bow'],pet:'🐱',achievements:[]};
+let S=loadState(), calDate=new Date(), selectedDate=today(), activeDeck=null, activeCard=0, timer={id:null,end:0,ms:0,running:false,started:0};
 const $=id=>document.getElementById(id);
-function save(){localStorage.setItem(key,JSON.stringify(S));render()}
-function uid(){return Date.now()+Math.random().toString(16).slice(2)}
-function today(){return new Date().toISOString().slice(0,10)}
-function addXP(n){S.xp+=n}
+function loadState(){
+ try{
+  let v=localStorage.getItem(KEY);
+  if(v) return {...defaults,...JSON.parse(v)};
+  let old=JSON.parse(localStorage.getItem(OLD)||'null');
+  if(old) return migrate(old);
+ }catch(e){}
+ return {...defaults};
+}
+function migrate(o){
+ return {...defaults,...o,events:o.events||[],studySessions:o.studySessions||[],decks:o.decks||[],studyMs:o.studyMs||0,background:o.background||'garden'};
+}
+function save(){localStorage.setItem(KEY,JSON.stringify(S));render()}
+function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2)}
+function today(){let d=new Date();return localDate(d)}
+function localDate(d){return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`}
+function esc(v=''){return String(v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+function addXP(n){S.xp+=n;let x=document.createElement('div');x.className='xpflash';x.textContent=`✨ +${n} XP`;document.body.appendChild(x);setTimeout(()=>x.remove(),800)}
 function level(){return Math.floor(S.xp/250)+1}
 function pct(a,b){return b?Math.round(a/b*100):0}
-function show(id,btn){document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));$(id).classList.add('active');document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));if(btn)btn.classList.add('active');else document.querySelector(`nav button[onclick*="'${id}'"]`)?.classList.add('active');render()}
-function modal(content){$('modalbox').innerHTML=content;$('modal').classList.add('show')}
-function closeModal(){$('modal').classList.remove('show')}
-function openTask(){modal(`<h2>➕ New task</h2><form class="form" onsubmit="addTask(event)"><input id="tn" placeholder="Task name" required><input id="td" type="date" value="${today()}"><input id="tt" type="time"><select id="ts"><option value="">No subject</option>${S.subjects.map(s=>`<option>${s.name}</option>`).join('')}</select><select id="tp"><option>Normal</option><option>High</option><option>Low</option></select><input id="te" type="number" min="5" placeholder="Estimated minutes"><textarea id="tno" placeholder="Notes"></textarea><div class="actions"><button type="button" class="btn soft" onclick="closeModal()">Cancel</button><button class="btn">Add task</button></div></form>`)}
-function addTask(e){e.preventDefault();S.tasks.push({id:uid(),name:tn.value,date:td.value,time:tt.value,subject:ts.value,priority:tp.value,est:+te.value||25,note:tno.value,done:false});addXP(5);closeModal();save()}
-function toggleTask(id){let t=S.tasks.find(x=>x.id===id);t.done=!t.done;if(t.done)addXP(t.priority==='High'?25:10);save()}
-function delTask(id){S.tasks=S.tasks.filter(x=>x.id!==id);save()}
-function openSubject(){modal(`<h2>📚 New subject</h2><form class="form" onsubmit="addSubject(event)"><input id="sn" placeholder="Subject name" required><textarea id="su" placeholder="Units, one per line"></textarea><div class="tiny">You can later mark each unit completed.</div><div class="actions"><button type="button" class="btn soft" onclick="closeModal()">Cancel</button><button class="btn">Add subject</button></div></form>`)}
-function addSubject(e){e.preventDefault();S.subjects.push({id:uid(),name:sn.value,units:su.value.split('\n').map(x=>x.trim()).filter(Boolean).map(x=>({name:x,done:false,revised:false}))});closeModal();save()}
-function toggleUnit(sid,i,type){let s=S.subjects.find(x=>x.id===sid);s.units[i][type]=!s.units[i][type];if(type==='done'&&s.units[i].done)addXP(50);if(type==='revised'&&s.units[i].revised)addXP(40);save()}
-function openExam(){modal(`<h2>📝 New exam</h2><form class="form" onsubmit="addExam(event)"><input id="en" placeholder="Exam / subject name" required><input id="ed" type="date" required><input id="et" type="time"><input id="el" placeholder="Location"><textarea id="eno" placeholder="Notes"></textarea><div class="actions"><button type="button" class="btn soft" onclick="closeModal()">Cancel</button><button class="btn">Add exam</button></div></form>`)}
-function addExam(e){e.preventDefault();S.exams.push({id:uid(),name:en.value,date:ed.value,time:et.value,loc:el.value,note:eno.value});closeModal();save()}
 function daysLeft(d){return Math.ceil((new Date(d+'T23:59:59')-new Date())/86400000)}
-function openAttendance(){modal(`<h2>🏫 Attendance</h2><form class="form" onsubmit="addAtt(event)"><input id="an" placeholder="Subject" required><input id="aa" type="number" min="0" placeholder="Lectures attended" required><input id="at" type="number" min="0" placeholder="Total lectures" required><input id="ar" type="number" min="1" max="100" value="75" placeholder="Required %"><div class="actions"><button type="button" class="btn soft" onclick="closeModal()">Cancel</button><button class="btn">Save</button></div></form>`)}
-function addAtt(e){e.preventDefault();let old=S.attendance.find(x=>x.name.toLowerCase()===an.value.toLowerCase());if(old){old.attended=+aa.value;old.total=+at.value;old.required=+ar.value}else S.attendance.push({id:uid(),name:an.value,attended:+aa.value,total:+at.value,required:+ar.value});closeModal();save()}
-function markAtt(id,present){let a=S.attendance.find(x=>x.id===id);a.total++;if(present)a.attended++;save()}
-function safeMiss(a){let r=a.required/100;return Math.max(0,Math.floor((a.attended-r*a.total)/(r)))}
-function needAttend(a){let r=a.required/100;if(a.total===0||a.attended/a.total>=r)return 0;return Math.ceil((r*a.total-a.attended)/(1-r))}
-function openLecture(){modal(`<h2>🗓️ Add lecture</h2><form class="form" onsubmit="addLecture(event)"><input id="ln" placeholder="Subject" required><input id="ld" type="date" value="${today()}" required><input id="lt" type="time" required><div class="actions"><button type="button" class="btn soft" onclick="closeModal()">Cancel</button><button class="btn">Add</button></div></form>`)}
-function addLecture(e){e.preventDefault();S.lectures.push({id:uid(),name:ln.value,date:ld.value,time:lt.value,status:'pending'});closeModal();save()}
-function setLecture(id,status){let l=S.lectures.find(x=>x.id===id);l.status=status;let a=S.attendance.find(x=>x.name.toLowerCase()===l.name.toLowerCase());if(!a){a={id:uid(),name:l.name,attended:0,total:0,required:75};S.attendance.push(a)}if(status!=='cancelled'){a.total++;if(status==='present')a.attended++;}save()}
-function lockIn(){modal(`<div class="pet">🔒</div><h2 style="text-align:center">LOCK IN</h2><div class="tiny" style="text-align:center">Pick a session and go study for real.</div><div class="list" style="margin-top:14px">${[15,25,45,60,90].map(m=>`<button class="btn big" onclick="startTimer(${m})">${m} minutes</button>`).join('')}</div>`)}
-function startTimer(m){let end=Date.now()+m*60000;modal(`<div style="text-align:center"><div class="pet">🐱</div><h2>YOU'RE LOCKED IN 🫡</h2><div id="timer" style="font-size:44px;font-weight:800"></div><div class="tiny">You don't need to stare at this screen. Go study.</div><button class="btn danger" style="margin-top:15px" onclick="finishTimer(false)">End session</button></div>`);let iv=setInterval(()=>{let left=Math.max(0,end-Date.now());$('timer').textContent=new Date(left).toISOString().substr(14,5);if(left<=0){clearInterval(iv);finishTimer(true)}},250);window._timer=iv}
-function finishTimer(done){if(window._timer)clearInterval(window._timer);if(done){addXP(30);S.streak=(S.lastStudy===today()?S.streak:S.streak+1);S.lastStudy=today();S.rewards.push(['🎀','🌸','✨','🧸'][Math.floor(Math.random()*4)]+' Study Reward')}closeModal();save()}
-function theme(t){S.theme=t;document.documentElement.dataset.theme=t;save()}
-function render(){document.documentElement.dataset.theme=S.theme;$('xp').textContent=S.xp;$('level').textContent=level();$('date').textContent=new Date().toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric',year:'numeric'});$('streak').textContent=S.streak+' 🔥';$('moodTag').textContent=S.mood.split(' ').slice(1).join(' ')||S.mood;
-let pending=S.tasks.filter(t=>!t.done);$('taskCount').textContent=pending.length;
-let overallUnits=S.subjects.flatMap(s=>s.units), done=overallUnits.filter(u=>u.done).length, op=pct(done,overallUnits.length);$('overallProgress').textContent=op+'%';$('overallBar').style.width=op+'%';
-let att=S.attendance;if(att.length){let av=att.reduce((x,a)=>x+a.attended,0),tv=att.reduce((x,a)=>x+a.total,0);$('attendanceOverall').textContent=pct(av,tv)+'%'}else $('attendanceOverall').textContent='—';
-let nextTask=pending.sort((a,b)=>(a.date||'').localeCompare(b.date||''))[0], nextExam=[...S.exams].sort((a,b)=>a.date.localeCompare(b.date))[0];let n=nextTask?`<div class="item"><span>☐</span><div><b>${nextTask.name}</b><div class="tiny">${nextTask.date}${nextTask.subject?' · '+nextTask.subject:''}</div></div></div>`:nextExam?`<div class="item">🎀 <div><b>${nextExam.name}</b><div class="tiny">${daysLeft(nextExam.date)} days left</div></div></div>`:`<div class="empty">Nothing urgent. suspiciously peaceful 👀</div>`;$('next').innerHTML=n;
-let q=pending.slice(0,3).map(t=>`<div class="item quest"><input type="checkbox" onchange="toggleTask('${t.id}')"><div><b>${t.name}</b><div class="tiny">+${t.priority==='High'?25:10} XP</div></div></div>`).join('');$('quests').innerHTML=q||'<div class="empty">Daily quests complete. Massive W.</div>';
-let boss=nextExam;if(boss){$('bossName').textContent=boss.name+' · '+daysLeft(boss.date)+' days left';let subj=S.subjects.find(s=>s.name.toLowerCase()===boss.name.toLowerCase()), bp=subj?pct(subj.units.filter(u=>u.done).length,subj.units.length):0;$('bossBar').style.width=bp+'%';$('bossHp').textContent='♥'.repeat(Math.max(0,5-Math.floor(bp/20)))+'♡'.repeat(Math.floor(bp/20))}else{$('bossName').textContent='Add an exam to spawn your next boss.';$('bossBar').style.width='0%';$('bossHp').textContent='♡♡♡♡♡'}
-$('taskList').innerHTML=pending.concat(S.tasks.filter(t=>t.done)).map(t=>`<div class="item ${t.done?'done':''}"><input type="checkbox" ${t.done?'checked':''} onchange="toggleTask('${t.id}')"><div style="flex:1"><b>${t.name}</b><div class="tiny">${t.date}${t.time?' · '+t.time:''}${t.subject?' · '+t.subject:''}</div></div><button class="btn danger" onclick="delTask('${t.id}')">×</button></div>`).join('')||'<div class="empty">No tasks yet. Go be suspiciously organized ✨</div>';
-$('subjectList').innerHTML=S.subjects.map(s=>{let p=pct(s.units.filter(u=>u.done).length,s.units.length);return `<div class="item" style="display:block"><div class="row"><b>📚 ${s.name}</b><span>${p}%</span></div><div class="progress"><div class="bar" style="width:${p}%"></div></div>${s.units.map((u,i)=>`<div class="row" style="padding:7px 0;border-top:1px solid #eee"><span>${u.done?'🟢':'⭕'} ${u.name}</span><span><button class="btn soft" onclick="toggleUnit('${s.id}',${i},'done')">${u.done?'Undo':'Done'}</button> <button class="btn soft" onclick="toggleUnit('${s.id}',${i},'revised')">${u.revised?'🔵 Revised':'Revise'}</button></span></div>`).join('')}</div>`}).join('')||'<div class="empty">Add your first subject and syllabus.</div>';
-$('examList').innerHTML=S.exams.map(e=>`<div class="item"><span>🎀</span><div style="flex:1"><b>${e.name}</b><div class="tiny">${e.date} · ${daysLeft(e.date)} days left</div></div></div>`).join('')||'<div class="empty">No exams added.</div>';
-$('lectureList').innerHTML=S.lectures.slice().sort((a,b)=>a.date.localeCompare(b.date)).map(l=>`<div class="item"><div style="flex:1"><b>${l.name}</b><div class="tiny">${l.date} · ${l.time}</div></div>${l.status==='pending'?`<button class="btn green" onclick="setLecture('${l.id}','present')">Present</button><button class="btn danger" onclick="setLecture('${l.id}','absent')">Absent</button>`:`<span class="tag">${l.status}</span>`}</div>`).join('')||'<div class="empty">No lectures added.</div>';
-$('attendanceList').innerHTML=att.map(a=>{let p=pct(a.attended,a.total), miss=safeMiss(a), need=needAttend(a), cls=p>=a.required?'safe':'dangerText';return `<div class="item" style="display:block"><div class="row"><b>${a.name}</b><b class="${cls}">${p}%</b></div><div class="tiny">${a.attended}/${a.total} attended · requirement ${a.required}%</div><div class="progress"><div class="bar" style="width:${Math.min(100,p)}%"></div></div><div class="tiny">${p>=a.required?`You can miss about <b>${miss}</b> more lecture(s) and stay at ${a.required}%.`:`You need about <b>${need}</b> consecutive attended lecture(s) to reach ${a.required}%.`}</div></div>`}).join('')||'<div class="empty">Add each subject to track attendance.</div>';
-$('progressList').innerHTML=S.subjects.map(s=>{let p=pct(s.units.filter(u=>u.done).length,s.units.length);return `<div style="margin:12px 0"><div class="row"><span>${s.name}</span><b>${p}%</b></div><div class="progress"><div class="bar" style="width:${p}%"></div></div></div>`}).join('')||'<div class="empty">Your academic progress will appear here.</div>';
-let ach=[];if(S.tasks.some(t=>t.done))ach.push('🏆 First Step');if(S.streak>=5)ach.push('🔥 Touch Grass? Never Heard of Her');if(S.subjects.some(s=>s.units.length&&s.units.every(u=>u.done)))ach.push('📚 Booked & Busy');if(S.exams.length)ach.push('⚔️ Boss Slayer in Training');if(S.subjects.reduce((n,s)=>n+s.units.filter(u=>u.done).length,0)>=10)ach.push('🧠 Big Brain Moment');if(S.streak>=10)ach.push('👑 Academic Weapon');$('achievements').innerHTML=ach.map(x=>`<div class="item">${x}</div>`).join('')||'<div class="empty">Achievements are waiting for you ✨</div>';
-$('collection').innerHTML=S.rewards.map(x=>`<span class="tag" style="margin:3px">${x}</span>`).join(' ');
-renderCalendar();
+function toast(t){let x=document.createElement('div');x.className='toast';x.textContent=t;document.body.appendChild(x);setTimeout(()=>x.remove(),2400)}
+const brainrot={
+open:["Are we studying or just decorating the planner again?","Welcome back, academic weapon.","The syllabus has entered the chat.","Lock in bestie."],
+done:["W.","Cooked.","That chapter got DESTROYED.","We are so back.","Academic comeback 📈"],
+overdue:["Girl... the backlog is becoming sentient.","Respectfully, we need to lock in 😭"],
+lock:["WAIT... WE'RE ACTUALLY STUDYING??","Okay bestie. Phone down. Brain on.","The academic demons fear us."],
+finish:["YOU LOCKED IN 🫡","okayyyy academic weapon","BRO COOKED."]
+};
+function random(a){return a[Math.floor(Math.random()*a.length)]}
+function show(id,btn){document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));$(id).classList.add('active');document.querySelectorAll('.nav button').forEach(x=>x.classList.remove('active'));if(btn)btn.classList.add('active');else [...document.querySelectorAll('.nav button')].find(b=>b.getAttribute('onclick')?.includes(`'${id}'`))?.classList.add('active');if(id==='cards')renderStudyArea();render()}
+function modal(content){$('modalbox').innerHTML=content;$('modal').classList.add('show')}
+function closeModal(){if(timer.running) return; $('modal').classList.remove('show')}
+$('modal').addEventListener('click',e=>{if(e.target.id==='modal'&&!timer.running)closeModal()})
+function formButtons(saveText='Save'){return `<div class="actions"><button type="button" class="btn soft" onclick="closeModal()">Cancel</button><button class="btn">${saveText}</button></div>`}
+function openTask(id=null){
+ let t=id?S.tasks.find(x=>x.id===id):null;
+ modal(`<h2>${t?'✏️ Edit task':'➕ New task'}</h2><form class="form" onsubmit="saveTask(event,'${id||''}')">
+ <input id="tn" placeholder="Task name" value="${esc(t?.name||'')}" required>
+ <input id="td" type="date" value="${t?.date||today()}">
+ <input id="tt" type="time" value="${t?.time||''}">
+ <select id="ts"><option value="">No subject</option>${S.subjects.map(s=>`<option ${s.name===t?.subject?'selected':''}>${esc(s.name)}</option>`).join('')}</select>
+ <select id="tp">${['Normal','High','Low'].map(x=>`<option ${x===t?.priority?'selected':''}>${x}</option>`).join('')}</select>
+ <input id="te" type="number" min="5" placeholder="Estimated minutes" value="${t?.est||25}">
+ <textarea id="tno" placeholder="Notes">${esc(t?.note||'')}</textarea>${formButtons(t?'Save changes':'Add task')}</form>`);
 }
-function renderCalendar(){let y=calDate.getFullYear(),m=calDate.getMonth(),first=new Date(y,m,1),last=new Date(y,m+1,0);$('monthTitle').textContent=first.toLocaleDateString(undefined,{month:'long',year:'numeric'});let cells='';for(let i=0;i<first.getDay();i++)cells+='<div></div>';for(let d=1;d<=last.getDate();d++){let ds=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`, items=[...S.tasks.filter(t=>t.date===ds),...S.exams.filter(e=>e.date===ds)];cells+=`<div class="day ${ds===today()?'today':''}"><b>${d}</b>${items.slice(0,3).map(x=>`<div class="dot">• ${x.name||'Exam'}</div>`).join('')}</div>`}$('calendarGrid').innerHTML=cells}
-function prevMonth(){calDate.setMonth(calDate.getMonth()-1);renderCalendar()}function nextMonth(){calDate.setMonth(calDate.getMonth()+1);renderCalendar()}
-render();
+function saveTask(e,id){e.preventDefault();let t=id?S.tasks.find(x=>x.id===id):{id:uid(),done:false};Object.assign(t,{name:tn.value,date:td.value,time:tt.value,subject:ts.value,priority:tp.value,est:+te.value||25,note:tno.value});if(!id){S.tasks.push(t);addXP(5)}closeModal();save();toast(id?'Task updated ✦':'Task added ✨')}
+function toggleTask(id){let t=S.tasks.find(x=>x.id===id);if(!t)return;t.done=!t.done;if(t.done){addXP(t.priority==='High'?25:10);toast(random(brainrot.done));}save()}
+function delTask(id){if(!confirm('Delete this task?'))return;S.tasks=S.tasks.filter(x=>x.id!==id);save()}
+function openSubject(id=null){
+ let s=id?S.subjects.find(x=>x.id===id):null;
+ modal(`<h2>${s?'✏️ Edit subject':'📚 New subject'}</h2><form class="form" onsubmit="saveSubject(event,'${id||''}')"><input id="sn" placeholder="Subject name" value="${esc(s?.name||'')}" required><textarea id="su" placeholder="Units, one per line">${esc((s?.units||[]).map(u=>u.name).join('\\n'))}</textarea><div class="tiny">One unit/chapter/topic per line. You can mark each one complete and revised.</div>${formButtons(s?'Save changes':'Add subject')}</form>`);
+}
+function saveSubject(e,id){e.preventDefault();let units=su.value.split('\\n').map(x=>x.trim()).filter(Boolean);let old=id?S.subjects.find(x=>x.id===id):null;let data=units.map(n=>{let prev=old?.units.find(u=>u.name===n);return {id:prev?.id||uid(),name:n,done:!!prev?.done,revised:!!prev?.revised}});if(old)Object.assign(old,{name:sn.value,units:data});else S.subjects.push({id:uid(),name:sn.value,units:data});closeModal();save();toast(id?'Subject updated ✦':'Subject added 📚')}
+function deleteSubject(id){if(!confirm('Delete this subject and its syllabus?'))return;S.subjects=S.subjects.filter(x=>x.id!==id);save()}
+function toggleUnit(sid,i,type){let s=S.subjects.find(x=>x.id===sid);if(!s?.units[i])return;s.units[i][type]=!s.units[i][type];if(type==='done'&&s.units[i].done){addXP(50);toast('📚 CHAPTER CLEARED');}if(type==='revised'&&s.units[i].revised)addXP(40);save()}
+function openExam(id=null){
+ let e=id?S.exams.find(x=>x.id===id):null;
+ modal(`<h2>${e?'✏️ Edit exam':'📝 New exam'}</h2><form class="form" onsubmit="saveExam(event,'${id||''}')">
+ <input id="en" placeholder="Exam name" value="${esc(e?.name||'')}" required>
+ <select id="es"><option value="">Subject (optional)</option>${S.subjects.map(s=>`<option ${s.name===e?.subject?'selected':''}>${esc(s.name)}</option>`).join('')}</select>
+ <input id="ed" type="date" value="${e?.date||today()}" required><input id="et" type="time" value="${e?.time||''}">
+ <input id="el" placeholder="Location" value="${esc(e?.loc||'')}"><textarea id="esyl" placeholder="Syllabus / topics">${esc(e?.syllabus||'')}</textarea><textarea id="eno" placeholder="Notes">${esc(e?.note||'')}</textarea>
+ <div class="checkrow"><input id="eboss" type="checkbox" ${e?.boss!==false?'checked':''}><label for="eboss">Turn this into an exam boss ⚔️</label></div>${formButtons(e?'Save changes':'Add exam')}</form>`);
+}
+function saveExam(ev,id){ev.preventDefault();let e=id?S.exams.find(x=>x.id===id):{id:uid()};Object.assign(e,{name:en.value,subject:es.value,date:ed.value,time:et.value,loc:el.value,syllabus:esyl.value,note:eno.value,boss:eboss.checked});if(!id)S.exams.push(e);closeModal();save();toast(id?'Exam updated ✦':'Exam added 🎓')}
+function deleteExam(id){if(!confirm('Delete this exam?'))return;S.exams=S.exams.filter(x=>x.id!==id);save()}
+function openAttendance(id=null){
+ let a=id?S.attendance.find(x=>x.id===id):null;
+ modal(`<h2>${a?'✏️ Edit attendance':'🏫 Attendance'}</h2><form class="form" onsubmit="saveAttendance(event,'${id||''}')"><input id="an" placeholder="Subject" value="${esc(a?.name||'')}" required><div class="two"><input id="aa" type="number" min="0" placeholder="Attended" value="${a?.attended??0}" required><input id="at" type="number" min="0" placeholder="Total" value="${a?.total??0}" required></div><input id="ar" type="number" min="1" max="100" value="${a?.required??75}" placeholder="Required %">${formButtons(a?'Save changes':'Save')}</form>`);
+}
+function saveAttendance(e,id){e.preventDefault();let attended=Math.max(0,+aa.value||0),total=Math.max(0,+at.value||0);if(attended>total){toast('Attended cannot be greater than total.');return}let a=id?S.attendance.find(x=>x.id===id):{id:uid()};Object.assign(a,{name:an.value,attended,total,required:+ar.value||75});if(!id)S.attendance.push(a);closeModal();save()}
+function deleteAttendance(id){if(!confirm('Delete this attendance record?'))return;S.attendance=S.attendance.filter(x=>x.id!==id);save()}
+function safeMiss(a){let r=a.required/100;return r>=1?0:Math.max(0,Math.floor((a.attended-r*a.total)/(r)))}
+function needAttend(a){let r=a.required/100;if(a.total===0||a.attended/a.total>=r)return 0;if(r>=1)return Infinity;return Math.ceil((r*a.total-a.attended)/(1-r))}
+function openLecture(id=null){
+ let l=id?S.lectures.find(x=>x.id===id):null;
+ modal(`<h2>${l?'✏️ Edit lecture':'🗓️ Add lecture'}</h2><form class="form" onsubmit="saveLecture(event,'${id||''}')"><input id="ln" placeholder="Subject" value="${esc(l?.name||'')}" required><input id="ld" type="date" value="${l?.date||selectedDate||today()}" required><input id="lt" type="time" value="${l?.time||''}" required><select id="ls"><option ${!l||l.status==='pending'?'selected':''} value="pending">Pending</option><option ${l?.status==='present'?'selected':''} value="present">Present</option><option ${l?.status==='absent'?'selected':''} value="absent">Absent</option><option ${l?.status==='cancelled'?'selected':''} value="cancelled">Cancelled</option></select>${formButtons(l?'Save changes':'Add lecture')}</form>`);
+}
+function saveLecture(e,id){e.preventDefault();let l=id?S.lectures.find(x=>x.id===id):{id:uid(),status:'pending'};let oldStatus=l.status;Object.assign(l,{name:ln.value,date:ld.value,time:lt.value,status:ls.value});if(!id)S.lectures.push(l);syncLectureAttendance(l,oldStatus);closeModal();save();toast(id?'Lecture updated ✦':'Lecture added 🗓️')}
+function syncLectureAttendance(l,oldStatus){
+ let a=S.attendance.find(x=>x.name.toLowerCase()===l.name.toLowerCase());if(!a){a={id:uid(),name:l.name,attended:0,total:0,required:75};S.attendance.push(a)}
+ // Lecture records are counted when marked present/absent. Changing a status needs to reverse the old contribution.
+ if(oldStatus && oldStatus!=='pending' && oldStatus!=='cancelled'){a.total--;if(oldStatus==='present')a.attended--}
+ if(l.status!=='pending'&&l.status!=='cancelled'){a.total++;if(l.status==='present')a.attended++}
+}
+function deleteLecture(id){if(!confirm('Delete this lecture?'))return;let l=S.lectures.find(x=>x.id===id);if(l)syncLectureAttendance({...l,status:'pending'},l.status);S.lectures=S.lectures.filter(x=>x.id!==id);save()}
+function markLecture(id,status){let l=S.lectures.find(x=>x.id===id);if(!l)return;let old=l.status;l.status=status;syncLectureAttendance(l,old);save();toast(status==='present'?'Attendance marked ✅':status==='absent'?'Attendance marked ❌':'Lecture cancelled')}
+function openDeck(id=null){
+ let d=id?S.decks.find(x=>x.id===id):null;
+ modal(`<h2>${d?'✏️ Edit deck':'🧠 New study-card deck'}</h2><form class="form" onsubmit="saveDeck(event,'${id||''}')"><input id="dn" placeholder="Deck name" value="${esc(d?.name||'')}" required><select id="ds"><option value="">No subject</option>${S.subjects.map(s=>`<option ${s.name===d?.subject?'selected':''}>${esc(s.name)}</option>`).join('')}</select>${formButtons(d?'Save changes':'Create deck')}</form>`);
+}
+function saveDeck(e,id){e.preventDefault();let d=id?S.decks.find(x=>x.id===id):{id:uid(),cards:[]};Object.assign(d,{name:dn.value,subject:ds.value});if(!id)S.decks.push(d);closeModal();save();toast(id?'Deck updated ✦':'Deck created 🧠')}
+function deleteDeck(id){if(!confirm('Delete this deck and its cards?'))return;S.decks=S.decks.filter(x=>x.id!==id);if(activeDeck===id)activeDeck=null;save()}
+function openCard(deckId,cardId=null){
+ let d=S.decks.find(x=>x.id===deckId), c=cardId?d.cards.find(x=>x.id===cardId):null;
+ modal(`<h2>${c?'✏️ Edit card':'🧠 New flashcard'}</h2><form class="form" onsubmit="saveCard(event,'${deckId}','${cardId||''}')"><textarea id="cf" placeholder="Front / question" required>${esc(c?.front||'')}</textarea><textarea id="cb" placeholder="Back / answer" required>${esc(c?.back||'')}</textarea>${formButtons(c?'Save changes':'Add card')}</form>`);
+}
+function saveCard(e,deckId,cardId){e.preventDefault();let d=S.decks.find(x=>x.id===deckId);let c=cardId?d.cards.find(x=>x.id===cardId):{id:uid(),remembered:false};Object.assign(c,{front:cf.value,back:cb.value});if(!cardId)d.cards.push(c);closeModal();save();toast(cardId?'Card updated ✦':'Card added 🧠')}
+function deleteCard(deckId,cardId){let d=S.decks.find(x=>x.id===deckId);if(!d)return;if(!confirm('Delete this card?'))return;d.cards=d.cards.filter(c=>c.id!==cardId);save()}
+function startDeck(id){activeDeck=id;activeCard=0;show('cards');}
+function renderStudyArea(){
+ let d=S.decks.find(x=>x.id===activeDeck);
+ if(!d){$('studyArea').innerHTML=S.decks.length?'<div class="empty">Choose a deck above to start studying.</div>':'<div class="empty">No decks yet. Make your first flashcard deck ✨</div>';return}
+ if(!d.cards.length){$('studyArea').innerHTML=`<div class="empty">This deck is empty. <button class="btn" onclick="openCard('${d.id}')">＋ Add card</button></div>`;return}
+ activeCard=Math.min(activeCard,d.cards.length-1);let c=d.cards[activeCard], remembered=d.cards.filter(x=>x.remembered).length,p=pct(remembered,d.cards.length);
+ $('studyArea').innerHTML=`<div class="row wrap"><div><h3>📚 ${esc(d.name)}</h3><div class="tiny">${esc(d.subject||'No subject')} · ${activeCard+1}/${d.cards.length} · ${remembered}/${d.cards.length} remembered</div></div><div class="actions"><button class="btn soft" onclick="shuffleCards('${d.id}')">🔀 Shuffle</button><button class="btn soft" onclick="openCard('${d.id}')">＋ Card</button></div></div><div class="progress"><div class="bar" style="width:${p}%"></div></div>
+ <div class="flashcard" id="flashcard" onclick="this.classList.toggle('flipped')"><div class="question"><div class="smallcaps">QUESTION</div><h2>${esc(c.front)}</h2></div><div class="answer"><div class="smallcaps">ANSWER</div><h2>${esc(c.back)}</h2></div><div class="hint">tap to flip ✦</div></div>
+ <div class="actions" style="justify-content:center;margin-top:12px"><button class="btn danger" onclick="rememberCard('${d.id}',false)">♡ Needs revision</button><button class="btn green" onclick="rememberCard('${d.id}',true)">✓ Got it</button></div>
+ <div class="actions" style="justify-content:center"><button class="btn soft" onclick="prevCard()">←</button><button class="btn soft" onclick="nextCard()">→</button><button class="btn soft" onclick="openCard('${d.id}','${c.id}')">✏️ Edit</button><button class="btn danger" onclick="deleteCard('${d.id}','${c.id}')">🗑️</button></div>`;
+}
+function rememberCard(deckId,val){let d=S.decks.find(x=>x.id===deckId),c=d.cards[activeCard];c.remembered=val;if(val)addXP(5);nextCard();save();toast(val?'Nice. Big brain moment 🧠':'Marked for revision ♡')}
+function nextCard(){let d=S.decks.find(x=>x.id===activeDeck);if(d)activeCard=(activeCard+1)%d.cards.length;renderStudyArea()}
+function prevCard(){let d=S.decks.find(x=>x.id===activeDeck);if(d)activeCard=(activeCard-1+d.cards.length)%d.cards.length;renderStudyArea()}
+function shuffleCards(id){let d=S.decks.find(x=>x.id===id);if(!d)return;d.cards.sort(()=>Math.random()-.5);activeCard=0;save()}
+function openCalendarItem(){
+ let date=selectedDate||today();
+ modal(`<h2>＋ Add to ${new Date(date+'T12:00').toLocaleDateString(undefined,{month:'long',day:'numeric'})}</h2><form class="form" onsubmit="saveCalendarItem(event)"><input id="ciName" placeholder="What are we planning?" required><select id="ciType"><option value="task">📚 Task</option><option value="study">🧠 Study session</option><option value="event">🏫 College event</option><option value="revision">🔄 Revision</option></select><input id="ciTime" type="time"><input id="ciDuration" type="number" min="5" value="30" placeholder="Minutes"><textarea id="ciNote" placeholder="Notes"></textarea>${formButtons('Add to calendar')}</form>`);
+}
+function saveCalendarItem(e){e.preventDefault();let type=ciType.value;if(type==='task'){S.tasks.push({id:uid(),name:ciName.value,date:selectedDate,time:ciTime.value,subject:'',priority:'Normal',est:+ciDuration.value||30,note:ciNote.value,done:false});addXP(5)}else if(type==='study'||type==='revision'){S.studySessions.push({id:uid(),name:ciName.value,date:selectedDate,time:ciTime.value,duration:+ciDuration.value||30,type,note:ciNote.value,done:false})}else S.events.push({id:uid(),name:ciName.value,date:selectedDate,time:ciTime.value,note:ciNote.value});closeModal();save();toast('Added to your calendar ✦')}
+function eventItems(ds){return [
+ ...S.tasks.filter(x=>x.date===ds).map(x=>({...x,type:'task'})),
+ ...S.exams.filter(x=>x.date===ds).map(x=>({...x,type:'exam'})),
+ ...S.studySessions.filter(x=>x.date===ds).map(x=>({...x,type:x.type||'study'})),
+ ...S.events.filter(x=>x.date===ds).map(x=>({...x,type:'event'}))
+]}
+function selectDate(ds){selectedDate=ds;renderCalendar();renderSelectedEvents()}
+function renderCalendar(){
+ let y=calDate.getFullYear(),m=calDate.getMonth(),first=new Date(y,m,1),last=new Date(y,m+1,0);
+ $('monthTitle').textContent=first.toLocaleDateString(undefined,{month:'long',year:'numeric'});
+ let cells=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].map(x=>`<div class="dow">${x}</div>`).join('');
+ for(let i=0;i<first.getDay();i++)cells+='<div></div>';
+ for(let d=1;d<=last.getDate();d++){
+  let ds=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`,items=eventItems(ds);
+  cells+=`<div class="day ${ds===today()?'today ':''}${ds===selectedDate?'selected':''}" onclick="selectDate('${ds}')"><b>${d}</b>${items.slice(0,3).map(x=>`<div class="dot event-${x.type}">• ${esc(x.name)}</div>`).join('')}${items.length>3?`<div class="dot">+${items.length-3} more</div>`:''}</div>`
+ }
+ $('calendarGrid').innerHTML=cells;
+}
+function renderSelectedEvents(){
+ let items=eventItems(selectedDate);
+ $('selectedTitle').textContent=new Date(selectedDate+'T12:00').toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric'});
+ $('selectedEvents').innerHTML=items.map(x=>{
+  let edit=x.type==='task'?`<button class="btn soft" onclick="openTask('${x.id}')">✏️</button>`:x.type==='exam'?`<button class="btn soft" onclick="openExam('${x.id}')">✏️</button>`:x.type==='event'?`<button class="btn soft" onclick="editEvent('${x.id}')">✏️</button>`:`<button class="btn soft" onclick="editStudy('${x.id}')">✏️</button>`;
+  let del=x.type==='task'?`<button class="btn danger" onclick="delTask('${x.id}')">🗑️</button>`:x.type==='exam'?`<button class="btn danger" onclick="deleteExam('${x.id}')">🗑️</button>`:x.type==='event'?`<button class="btn danger" onclick="deleteEvent('${x.id}')">🗑️</button>`:`<button class="btn danger" onclick="deleteStudy('${x.id}')">🗑️</button>`;
+  return `<div class="item"><span>${x.type==='task'?'📚':x.type==='exam'?'🎓':x.type==='revision'?'🔄':x.type==='study'?'🧠':'🏫'}</span><div style="flex:1"><b>${esc(x.name)}</b><div class="tiny">${esc(x.time||'Any time')}${x.duration?' · '+x.duration+' min':''}</div></div>${edit}${del}</div>`
+ }).join('')||'<div class="empty">Nothing planned here yet. suspiciously peaceful 👀</div>';
+}
+function editEvent(id){let x=S.events.find(e=>e.id===id);if(!x)return;modal(`<h2>✏️ Edit event</h2><form class="form" onsubmit="saveEvent(event,'${id}')"><input id="evn" value="${esc(x.name)}" required><input id="evd" type="date" value="${x.date}"><input id="evt" type="time" value="${x.time||''}"><textarea id="evnote">${esc(x.note||'')}</textarea>${formButtons('Save changes')}</form>`)}
+function saveEvent(e,id){e.preventDefault();let x=S.events.find(e=>e.id===id);Object.assign(x,{name:evn.value,date:evd.value,time:evt.value,note:evnote.value});closeModal();save()}
+function deleteEvent(id){if(!confirm('Delete this event?'))return;S.events=S.events.filter(x=>x.id!==id);save()}
+function editStudy(id){let x=S.studySessions.find(s=>s.id===id);if(!x)return;modal(`<h2>✏️ Edit study session</h2><form class="form" onsubmit="saveStudy(event,'${id}')"><input id="stn" value="${esc(x.name)}" required><select id="sttype"><option value="study" ${x.type==='study'?'selected':''}>🧠 Study</option><option value="revision" ${x.type==='revision'?'selected':''}>🔄 Revision</option></select><input id="std" type="date" value="${x.date}"><input id="stt" type="time" value="${x.time||''}"><input id="stdur" type="number" min="5" value="${x.duration||30}"><textarea id="stnote">${esc(x.note||'')}</textarea>${formButtons('Save changes')}</form>`)}
+function saveStudy(e,id){e.preventDefault();let x=S.studySessions.find(s=>s.id===id);Object.assign(x,{name:stn.value,type:sttype.value,date:std.value,time:stt.value,duration:+stdur.value||30,note:stnote.value});closeModal();save()}
+function deleteStudy(id){if(!confirm('Delete this study session?'))return;S.studySessions=S.studySessions.filter(x=>x.id!==id);save()}
+function prevMonth(){calDate.setMonth(calDate.getMonth()-1);renderCalendar();renderSelectedEvents()}
+function nextMonth(){calDate.setMonth(calDate.getMonth()+1);renderCalendar();renderSelectedEvents()}
+function goToday(){calDate=new Date();selectedDate=today();renderCalendar();renderSelectedEvents()}
+function lockIn(){
+ modal(`<div class="pet">🔒</div><h2 style="text-align:center">LOCK IN</h2><div class="tiny" style="text-align:center">${random(brainrot.lock)}</div><div class="list" style="margin-top:14px">${[15,25,45,60,90].map(m=>`<button class="btn big" onclick="startTimer(${m})">${m} minutes</button>`).join('')}<button class="btn soft" onclick="customTimer()">Custom duration</button></div>`);
+}
+function customTimer(){modal(`<h2>🔒 Custom Lock In</h2><form class="form" onsubmit="startCustom(event)"><input id="customMin" type="number" min="1" max="240" value="30" required><div class="tiny">minutes</div>${formButtons('Start')}</form>`)}
+function startCustom(e){e.preventDefault();startTimer(+customMin.value)}
+function startTimer(m){
+ if(timer.running) return;
+ timer={id:null,end:Date.now()+m*60000,ms:m*60000,running:true,started:Date.now()};
+ modal(`<div style="text-align:center"><div class="pet">🐱</div><div class="tiny">${random(brainrot.lock)}</div><h2>YOU'RE LOCKED IN 🫡</h2><div id="timer" style="font-size:48px;font-weight:850;letter-spacing:1px">--:--</div><div class="progress"><div class="bar" id="timerBar" style="width:100%"></div></div><div class="tiny">You don't need to stare at this screen. Go study.</div><div class="actions" style="justify-content:center"><button class="btn soft" onclick="pauseTimer()" id="pauseBtn">⏸ Pause</button><button class="btn danger" onclick="finishTimer(false)">End</button></div></div>`);
+ tickTimer();
+ timer.id=setInterval(tickTimer,250);
+}
+function tickTimer(){
+ if(!timer.running)return;
+ let left=Math.max(0,timer.end-Date.now()),mins=Math.floor(left/60000),secs=Math.floor(left/1000)%60;
+ if($('timer')){$('timer').textContent=`${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}`;$('timerBar').style.width=`${Math.max(0,left/timer.ms*100)}%`}
+ if(left<=0)finishTimer(true);
+}
+function pauseTimer(){if(!timer.running)return;timer.running=false;if(timer.id)clearInterval(timer.id);timer.remaining=Math.max(0,timer.end-Date.now());$('pauseBtn').textContent='▶ Resume';$('pauseBtn').onclick=resumeTimer}
+function resumeTimer(){if(timer.running)return;timer.running=true;timer.end=Date.now()+timer.remaining;timer.id=setInterval(tickTimer,250);$('pauseBtn').textContent='⏸ Pause';$('pauseBtn').onclick=pauseTimer}
+function finishTimer(done){
+ if(timer.id)clearInterval(timer.id);
+ let elapsed=timer.ms-(timer.remaining??0);if(done)elapsed=timer.ms;
+ if(elapsed>0)S.studyMs+=elapsed;
+ if(done){addXP(Math.max(10,Math.round(timer.ms/60000*2/5)*5));updateStreak();S.rewards.push(random(['🎀 Study Reward','🌸 Study Reward','✨ Study Reward','🧸 Study Reward']));toast(random(brainrot.finish))}
+ timer={id:null,end:0,ms:0,running:false,started:0};closeModal();save()
+}
+function updateStreak(){let t=today();if(S.lastStudy===t)return;let prev=new Date();prev.setDate(prev.getDate()-1);if(S.lastStudy===localDate(prev))S.streak++;else S.streak=1;S.lastStudy=t}
+function moodCheck(){modal(`<h2>✨ What's the vibe today?</h2><div class="list">${['😴 Cooked','🙂 Functioning','😤 Locked in','🔥 ACADEMIC WEAPON'].map(x=>`<button class="btn soft" onclick="setMood('${x}')">${x}</button>`).join('')}</div>`)}
+function setMood(x){S.mood=x;closeModal();save()}
+function openCustomize(){
+ let themes=[['pink','Pink'],['lav','Lavender'],['blue','Blue'],['sage','Sage'],['peach','Peach'],['cream','Cream'],['night','Night']];
+ let bgs=[['garden','🌸 Soft Garden'],['cloudy','☁️ Cloudy'],['coquette','🎀 Coquette'],['studycore','📚 Studycore'],['nightstudy','🌙 Night Study'],['cafe','🍓 Cute Café']];
+ modal(`<h2>🎀 Customize StudySprout</h2><h3>Accent theme</h3><div class="themegrid">${themes.map(([k,n])=>`<div class="choice ${S.theme===k?'selected':''}" onclick="setTheme('${k}')"><div class="swatch sw-${k}"></div>${n}</div>`).join('')}</div><h3 style="margin-top:18px">Background</h3><div class="bggrid">${bgs.map(([k,n])=>`<div class="choice ${S.background===k?'selected':''}" onclick="setBackground('${k}')">${n}</div>`).join('')}</div><div class="actions"><button class="btn soft" onclick="closeModal()">Done</button></div>`);
+}
+function setTheme(t){S.theme=t;applyTheme();save();openCustomize()}
+function setBackground(b){S.background=b;applyTheme();save();openCustomize()}
+function applyTheme(){document.body.className=`theme-${S.theme} bg-${S.background}`}
+function shareProgress(){
+ modal(`<h2>📤 Share my progress</h2><div class="tiny">Choose what appears on your share card.</div><div class="list" style="margin-top:12px">${[['hours','Study hours',true],['tasks','Tasks completed',true],['streak','Streak',true],['xpShare','XP / level',true],['subjects','Subjects',false],['exams','Exam info',false]].map(([id,n,c])=>`<label class="checkrow"><input id="share_${id}" type="checkbox" ${c?'checked':''}>${n}</label>`).join('')}</div><div class="actions"><button class="btn soft" onclick="closeModal()">Cancel</button><button class="btn" onclick="makeShareCard()">Generate card</button></div>`)
+}
+function makeShareCard(){
+ let canvas=document.createElement('canvas');canvas.width=1080;canvas.height=1350;let c=canvas.getContext('2d');
+ let grad=c.createLinearGradient(0,0,1080,1350);grad.addColorStop(0,'#fff9f6');grad.addColorStop(1,'#eee4f7');c.fillStyle=grad;c.fillRect(0,0,1080,1350);
+ c.fillStyle='#b88dbd';c.font='34px sans-serif';c.fillText('✦  ♡  🎀  ✿  ✧',80,90);
+ c.fillStyle='#413747';c.font='bold 66px system-ui';c.fillText('STUDYSPROUT',80,190);c.font='30px system-ui';c.fillStyle='#8d8190';c.fillText('weekly academic comeback',80,235);
+ let y=340;let rows=[];if($('share_hours').checked)rows.push(['📚',`${(S.studyMs/3600000).toFixed(1)}h`,'study time']);if($('share_tasks').checked)rows.push(['✅',String(S.tasks.filter(t=>t.done).length),'tasks completed']);if($('share_streak').checked)rows.push(['🔥',String(S.streak), 'day streak']);if($('share_xpShare').checked)rows.push(['⭐',`${S.xp} XP · Lv ${level()}`,'level']);if($('share_subjects').checked)rows.push(['🧠',String(S.subjects.length),'subjects']);if($('share_exams').checked){let e=S.exams.filter(x=>x.date>=today()).sort((a,b)=>a.date.localeCompare(b.date))[0];rows.push(['🎓',e?`${daysLeft(e.date)} days`:'none','next exam'])}
+ c.fillStyle='#fff';roundRect(c,70,285,940,760,42);c.fill();rows.forEach(r=>{c.fillStyle='#413747';c.font='54px system-ui';c.fillText(r[0],130,y);c.font='bold 48px system-ui';c.fillText(r[1],220,y);c.font='25px system-ui';c.fillStyle='#8d8190';c.fillText(r[2],220,y+38);y+=125});
+ c.fillStyle='#8f70a4';c.font='italic 34px system-ui';c.fillText('academic comeback loading...',110,1140);c.fillStyle='#b88dbd';c.font='34px sans-serif';c.fillText('✦  ♡  ✿  ☁  ✨',730,1270);
+ let url=canvas.toDataURL('image/png');modal(`<h2>🎀 Your share card</h2><img src="${url}" style="width:100%;border-radius:20px;border:1px solid var(--line)"><div class="actions"><a class="btn" href="${url}" download="studysprout-progress.png">⬇ Save image</a><button class="btn soft" onclick="nativeShare('${url}')">📤 Share</button></div>`)}
+function roundRect(c,x,y,w,h,r){c.beginPath();c.roundRect(x,y,w,h,r);c.closePath()}
+async function nativeShare(url){try{let blob=await (await fetch(url)).blob(),file=new File([blob],'studysprout-progress.png',{type:'image/png'});if(navigator.share)await navigator.share({title:'My StudySprout progress',files:[file]});else toast('Use Save image, then share it ✨')}catch(e){toast('Use Save image, then share it ✨')}}
+function render(){
+ applyTheme();$('xp').textContent=S.xp;$('level').textContent=level();$('date').textContent=new Date().toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric',year:'numeric'});
+ let pending=S.tasks.filter(t=>!t.done),overdue=pending.filter(t=>t.date&&t.date<today());$('greeting').textContent=random(brainrot.open);$('quote').textContent=overdue.length?random(brainrot.overdue):'The syllabus isn’t going to defeat itself.';$('streak').textContent=S.streak+' 🔥';$('moodTag').textContent=S.mood.split(' ').slice(1).join(' ')||S.mood;$('studyHours').textContent=(S.studyMs/3600000).toFixed(1)+'h';
+ $('taskCount').textContent=pending.length;
+ let units=S.subjects.flatMap(s=>s.units),done=units.filter(u=>u.done).length,op=pct(done,units.length);$('overallProgress').textContent=op+'%';$('overallBar').style.width=op+'%';
+ let av=S.attendance.reduce((x,a)=>x+a.attended,0),tv=S.attendance.reduce((x,a)=>x+a.total,0);$('attendanceOverall').textContent=tv?pct(av,tv)+'%':'—';$('petMsg').textContent=overdue.length?random(brainrot.overdue):random(brainrot.open);
+ let nextTask=[...pending].sort((a,b)=>(a.date||'9999').localeCompare(b.date||'9999'))[0],nextExam=[...S.exams].filter(e=>e.date>=today()).sort((a,b)=>a.date.localeCompare(b.date))[0];
+ $('next').innerHTML=nextTask?`<div class="item"><span>☐</span><div style="flex:1"><b>${esc(nextTask.name)}</b><div class="tiny">${esc(nextTask.date)}${nextTask.subject?' · '+esc(nextTask.subject):''}</div></div><button class="btn soft" onclick="openTask('${nextTask.id}')">✏️</button></div>`:nextExam?`<div class="item">🎓 <div><b>${esc(nextExam.name)}</b><div class="tiny">${daysLeft(nextExam.date)} days left</div></div></div>`:'<div class="empty">Nothing urgent. suspiciously peaceful 👀</div>';
+ $('quests').innerHTML=pending.slice(0,3).map(t=>`<div class="item quest"><input type="checkbox" onchange="toggleTask('${t.id}')"><div><b>${esc(t.name)}</b><div class="tiny">+${t.priority==='High'?25:10} XP · ${esc(t.date||'No date')}</div></div></div>`).join('')||'<div class="empty">Daily quests complete. Massive W.</div>';
+ let boss=nextExam;if(boss){$('bossName').textContent=`${boss.name} · ${daysLeft(boss.date)} days left`;let subj=S.subjects.find(s=>s.name===boss.subject),bp=subj?pct(subj.units.filter(u=>u.done).length,subj.units.length):0;$('bossBar').style.width=bp+'%';$('bossHp').textContent='♥'.repeat(Math.max(0,5-Math.floor(bp/20)))+'♡'.repeat(Math.floor(bp/20))}else{$('bossName').textContent='Add an exam to spawn your next boss.';$('bossBar').style.width='0%';$('bossHp').textContent='♡♡♡♡♡'}
+ $('taskList').innerHTML=[...S.tasks].sort((a,b)=>(a.done-b.done)||(a.date||'9999').localeCompare(b.date||'9999')).map(t=>`<div class="item ${t.done?'done':''}"><input type="checkbox" ${t.done?'checked':''} onchange="toggleTask('${t.id}')"><div style="flex:1"><b>${esc(t.name)}</b><div class="tiny">${esc(t.date||'No date')}${t.time?' · '+esc(t.time):''}${t.subject?' · '+esc(t.subject):''}</div></div><button class="btn soft" onclick="openTask('${t.id}')">✏️</button><button class="btn danger" onclick="delTask('${t.id}')">🗑️</button></div>`).join('')||'<div class="empty">No tasks yet. Go be suspiciously organized ✨</div>';
+ $('subjectList').innerHTML=S.subjects.map(s=>{let p=pct(s.units.filter(u=>u.done).length,s.units.length);return `<div class="item" style="display:block"><div class="row"><b>📚 ${esc(s.name)}</b><div class="actions"><span>${p}%</span><button class="btn soft" onclick="openSubject('${s.id}')">✏️</button><button class="btn danger" onclick="deleteSubject('${s.id}')">🗑️</button></div></div><div class="progress"><div class="bar" style="width:${p}%"></div></div>${s.units.map((u,i)=>`<div class="row" style="padding:7px 0;border-top:1px solid var(--line)"><span>${u.done?'🟢':'⭕'} ${esc(u.name)}</span><span><button class="btn soft" onclick="toggleUnit('${s.id}',${i},'done')">${u.done?'Undo':'Done'}</button> <button class="btn soft" onclick="toggleUnit('${s.id}',${i},'revised')">${u.revised?'🔵 Revised':'Revise'}</button></span></div>`).join('')}</div>`}).join('')||'<div class="empty">Add your first subject and syllabus.</div>';
+ $('examList').innerHTML=S.exams.map(e=>`<div class="item"><span>🎓</span><div style="flex:1"><b>${esc(e.name)}</b><div class="tiny">${esc(e.subject||'No subject')} · ${esc(e.date)} · ${daysLeft(e.date)} days left</div></div><button class="btn soft" onclick="openExam('${e.id}')">✏️</button><button class="btn danger" onclick="deleteExam('${e.id}')">🗑️</button></div>`).join('')||'<div class="empty">No exams added.</div>';
+ $('deckList').innerHTML=S.decks.map(d=>{let p=pct(d.cards.filter(c=>c.remembered).length,d.cards.length);return `<div class="item"><span>🧠</span><div style="flex:1"><b>${esc(d.name)}</b><div class="tiny">${esc(d.subject||'No subject')} · ${d.cards.length} cards · ${p}% remembered</div></div><button class="btn" onclick="startDeck('${d.id}')">Study</button><button class="btn soft" onclick="openDeck('${d.id}')">✏️</button><button class="btn danger" onclick="deleteDeck('${d.id}')">🗑️</button></div>`}).join('')||'<div class="empty">No decks yet. Add flashcards for your next boss fight 🧠</div>';
+ $('lectureList').innerHTML=S.lectures.slice().sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time)).map(l=>`<div class="item"><div style="flex:1"><b>${esc(l.name)}</b><div class="tiny">${esc(l.date)} · ${esc(l.time)} · ${l.status}</div></div>${l.status==='pending'?`<button class="btn green" onclick="markLecture('${l.id}','present')">Present</button><button class="btn danger" onclick="markLecture('${l.id}','absent')">Absent</button>`:`<button class="btn soft" onclick="openLecture('${l.id}')">✏️</button>`}<button class="btn danger" onclick="deleteLecture('${l.id}')">🗑️</button></div>`).join('')||'<div class="empty">No lectures yet.</div>';
+ $('attendanceList').innerHTML=S.attendance.map(a=>{let p=pct(a.attended,a.total),miss=safeMiss(a),need=needAttend(a),cls=p>=a.required?'safe':'dangerText';return `<div class="item" style="display:block"><div class="row"><b>${esc(a.name)}</b><div class="actions"><b class="${cls}">${p}%</b><button class="btn soft" onclick="openAttendance('${a.id}')">✏️</button><button class="btn danger" onclick="deleteAttendance('${a.id}')">🗑️</button></div></div><div class="tiny">${a.attended}/${a.total} attended · requirement ${a.required}%</div><div class="progress"><div class="bar" style="width:${Math.min(100,p)}%"></div></div><div class="tiny">${p>=a.required?`You can miss about <b>${miss}</b> more lecture(s) and stay at ${a.required}%.`:`You need about <b>${need}</b> consecutive attended lecture(s) to reach ${a.required}%.`}</div></div>`}).join('')||'<div class="empty">Add each subject to track attendance.</div>';
+ $('progressList').innerHTML=S.subjects.map(s=>{let p=pct(s.units.filter(u=>u.done).length,s.units.length);return `<div style="margin:12px 0"><div class="row"><span>📚 ${esc(s.name)}</span><b>${p}%</b></div><div class="progress"><div class="bar" style="width:${p}%"></div></div></div>`}).join('')||'<div class="empty">Your academic progress will appear here.</div>';
+ let ach=[];if(S.tasks.some(t=>t.done))ach.push('🏆 First Step');if(S.streak>=5)ach.push('🔥 Touch Grass? Never Heard of Her');if(S.subjects.some(s=>s.units.length&&s.units.every(u=>u.done)))ach.push('📚 Booked & Busy');if(S.exams.length)ach.push('⚔️ Boss Slayer in Training');if(units.filter(u=>u.done).length>=10)ach.push('🧠 Big Brain Moment');if(S.streak>=10)ach.push('👑 Academic Weapon');$('achievements').innerHTML=ach.map(x=>`<div class="item">${x}</div>`).join('')||'<div class="empty">Achievements are waiting for you ✨</div>';
+ $('collection').innerHTML=S.rewards.map(x=>`<span class="tag" style="margin:3px">${esc(x)}</span>`).join('');
+ renderCalendar();renderSelectedEvents();
+}
+applyTheme();render();
 </script>
-<script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js"));}</script></body></html>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js"))}</script>
+</body></html>
