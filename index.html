@@ -4,9 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#f3bfd2">
-<meta name="description" content="StudySprout — your cute little college life planner">
-<title>StudySprout 2.0 🎀</title>
+<meta name="description" content="mimori — your cozy study and college-life companion">
+<title>mimori 🎀</title>
 <link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/icon-192.png">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
 <style>
 :root{
  --bg:#fff9f6;--bg2:#f8effb;--card:rgba(255,255,255,.86);--ink:#413747;--muted:#8d8190;
@@ -64,12 +66,14 @@ button:active{transform:scale(.98)}button:disabled{opacity:.5;cursor:not-allowed
 .badge{display:inline-flex;align-items:center;gap:5px;padding:6px 9px;border-radius:999px;background:#f8eef8;font-size:11px}.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .smallcaps{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 @media(max-width:760px){.span8,.span6,.span4{grid-column:span 12}.app{padding:12px 10px 102px}.hero h2{font-size:24px}.nav{max-width:calc(100vw - 14px);width:max-content}.nav button{padding:8px 8px;font-size:11px}.themegrid,.bggrid{grid-template-columns:repeat(2,1fr)}.day{min-height:68px;font-size:12px}.top .pill{font-size:11px}.stat{min-width:95px}}
+
+.logoimg{width:50px;height:50px;border-radius:17px;object-fit:cover;box-shadow:var(--shadow);background:#faf3e7}.attach{display:flex;align-items:center;gap:8px;margin:6px 0}.attach img{width:70px;height:55px;object-fit:cover;border-radius:10px;border:1px solid var(--line)}label{display:grid;gap:5px;font-size:12px;color:var(--muted)}.buddygrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.buddychoice{border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.55);padding:8px;text-align:left;color:var(--ink);cursor:pointer}.buddychoice.selected{outline:2px solid var(--accent)}.buddychoice img{width:100%;height:130px;object-fit:cover;border-radius:13px;display:block;margin-bottom:5px}.buddychoice span{display:block;font-size:11px;color:var(--muted);margin-top:3px}.buddymini{display:flex;align-items:center;gap:10px}.buddymini img{width:75px;height:70px;object-fit:cover;border-radius:16px}.waterwrap{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center}.bottle{height:210px;width:100px;border:3px solid #9bb7d1;border-radius:25px 25px 18px 18px;position:relative;overflow:hidden;background:rgba(220,240,250,.4);display:flex;align-items:flex-end;justify-content:center}.waterfill{position:absolute;bottom:0;left:0;right:0;height:45%;background:linear-gradient(#bfe7f4,#8fcde5);opacity:.8}.bottlemark{position:relative;z-index:1;background:rgba(255,255,255,.7);padding:4px 7px;border-radius:10px;margin-bottom:12px;font-weight:700}.shopgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.shopgrid .choice{display:grid;gap:6px}@media(max-width:520px){.buddygrid{grid-template-columns:repeat(2,1fr)}.buddychoice img{height:105px}.waterwrap{grid-template-columns:100px 1fr}.bottle{width:85px}.shopgrid{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body class="theme-pink bg-garden">
 <div class="app">
 <header class="top">
-  <div class="brand"><div class="logo">🎀</div><div><h1>StudySprout</h1><div class="sub">your cute little college life ✦</div></div></div>
+  <div class="brand"><img class="logoimg" src="assets/mimori-icon.png" alt="mimori"><div><h1>mimori</h1><div class="sub">your cozy little study companion ✦</div></div></div>
   <div class="pill">⭐ <b id="xp">0</b> XP · Lv <b id="level">1</b></div>
 </header>
 
@@ -103,7 +107,7 @@ button:active{transform:scale(.98)}button:disabled{opacity:.5;cursor:not-allowed
 <section id="subjects" class="section">
 <div class="card"><div class="row wrap"><div><h2>📚 Subjects & syllabus</h2><div class="tiny">Units → chapters → topics.</div></div><button class="btn" onclick="openSubject()">＋ Subject</button></div><div class="list" id="subjectList" style="margin-top:14px"></div></div>
 <div class="card" style="margin-top:14px"><div class="row"><h2>📝 Exams</h2><button class="btn" onclick="openExam()">＋ Exam</button></div><div class="list" id="examList" style="margin-top:12px"></div></div>
-<div class="card" style="margin-top:14px"><div class="row"><h2>🧠 Study Cards</h2><button class="btn" onclick="openDeck()">＋ Deck</button></div><div class="list" id="deckList" style="margin-top:12px"></div></div>
+
 </section>
 
 <section id="calendar" class="section">
@@ -136,7 +140,7 @@ button:active{transform:scale(.98)}button:disabled{opacity:.5;cursor:not-allowed
 <button onclick="show('subjects',this)">📚 Subjects</button>
 <button onclick="show('calendar',this)">📅 Calendar</button>
 <button onclick="show('cards',this)">🧠 Cards</button>
-<button onclick="show('progress',this)">✨ More</button>
+<button id="mimoriMoreBtn" onclick="openMore()">🎀 More</button>
 </nav>
 
 <div class="modal" id="modal"><div class="modalbox" id="modalbox"></div></div>
@@ -336,7 +340,7 @@ function setMood(x){S.mood=x;closeModal();save()}
 function openCustomize(){
  let themes=[['pink','Pink'],['lav','Lavender'],['blue','Blue'],['sage','Sage'],['peach','Peach'],['cream','Cream'],['night','Night']];
  let bgs=[['garden','🌸 Soft Garden'],['cloudy','☁️ Cloudy'],['coquette','🎀 Coquette'],['studycore','📚 Studycore'],['nightstudy','🌙 Night Study'],['cafe','🍓 Cute Café']];
- modal(`<h2>🎀 Customize StudySprout</h2><h3>Accent theme</h3><div class="themegrid">${themes.map(([k,n])=>`<div class="choice ${S.theme===k?'selected':''}" onclick="setTheme('${k}')"><div class="swatch sw-${k}"></div>${n}</div>`).join('')}</div><h3 style="margin-top:18px">Background</h3><div class="bggrid">${bgs.map(([k,n])=>`<div class="choice ${S.background===k?'selected':''}" onclick="setBackground('${k}')">${n}</div>`).join('')}</div><div class="actions"><button class="btn soft" onclick="closeModal()">Done</button></div>`);
+ modal(`<h2>🎀 Customize mimori</h2><h3>Accent theme</h3><div class="themegrid">${themes.map(([k,n])=>`<div class="choice ${S.theme===k?'selected':''}" onclick="setTheme('${k}')"><div class="swatch sw-${k}"></div>${n}</div>`).join('')}</div><h3 style="margin-top:18px">Background</h3><div class="bggrid">${bgs.map(([k,n])=>`<div class="choice ${S.background===k?'selected':''}" onclick="setBackground('${k}')">${n}</div>`).join('')}</div><div class="actions"><button class="btn soft" onclick="closeModal()">Done</button></div>`);
 }
 function setTheme(t){S.theme=t;applyTheme();save();openCustomize()}
 function setBackground(b){S.background=b;applyTheme();save();openCustomize()}
@@ -352,9 +356,9 @@ function makeShareCard(){
  let y=340;let rows=[];if($('share_hours').checked)rows.push(['📚',`${(S.studyMs/3600000).toFixed(1)}h`,'study time']);if($('share_tasks').checked)rows.push(['✅',String(S.tasks.filter(t=>t.done).length),'tasks completed']);if($('share_streak').checked)rows.push(['🔥',String(S.streak), 'day streak']);if($('share_xpShare').checked)rows.push(['⭐',`${S.xp} XP · Lv ${level()}`,'level']);if($('share_subjects').checked)rows.push(['🧠',String(S.subjects.length),'subjects']);if($('share_exams').checked){let e=S.exams.filter(x=>x.date>=today()).sort((a,b)=>a.date.localeCompare(b.date))[0];rows.push(['🎓',e?`${daysLeft(e.date)} days`:'none','next exam'])}
  c.fillStyle='#fff';roundRect(c,70,285,940,760,42);c.fill();rows.forEach(r=>{c.fillStyle='#413747';c.font='54px system-ui';c.fillText(r[0],130,y);c.font='bold 48px system-ui';c.fillText(r[1],220,y);c.font='25px system-ui';c.fillStyle='#8d8190';c.fillText(r[2],220,y+38);y+=125});
  c.fillStyle='#8f70a4';c.font='italic 34px system-ui';c.fillText('academic comeback loading...',110,1140);c.fillStyle='#b88dbd';c.font='34px sans-serif';c.fillText('✦  ♡  ✿  ☁  ✨',730,1270);
- let url=canvas.toDataURL('image/png');modal(`<h2>🎀 Your share card</h2><img src="${url}" style="width:100%;border-radius:20px;border:1px solid var(--line)"><div class="actions"><a class="btn" href="${url}" download="studysprout-progress.png">⬇ Save image</a><button class="btn soft" onclick="nativeShare('${url}')">📤 Share</button></div>`)}
+ let url=canvas.toDataURL('image/png');modal(`<h2>🎀 Your share card</h2><img src="${url}" style="width:100%;border-radius:20px;border:1px solid var(--line)"><div class="actions"><a class="btn" href="${url}" download="mimori-progress.png">⬇ Save image</a><button class="btn soft" onclick="nativeShare('${url}')">📤 Share</button></div>`)}
 function roundRect(c,x,y,w,h,r){c.beginPath();c.roundRect(x,y,w,h,r);c.closePath()}
-async function nativeShare(url){try{let blob=await (await fetch(url)).blob(),file=new File([blob],'studysprout-progress.png',{type:'image/png'});if(navigator.share)await navigator.share({title:'My StudySprout progress',files:[file]});else toast('Use Save image, then share it ✨')}catch(e){toast('Use Save image, then share it ✨')}}
+async function nativeShare(url){try{let blob=await (await fetch(url)).blob(),file=new File([blob],'studysprout-progress.png',{type:'image/png'});if(navigator.share)await navigator.share({title:'My mimori progress',files:[file]});else toast('Use Save image, then share it ✨')}catch(e){toast('Use Save image, then share it ✨')}}
 function render(){
  applyTheme();$('xp').textContent=S.xp;$('level').textContent=level();$('date').textContent=new Date().toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric',year:'numeric'});
  let pending=S.tasks.filter(t=>!t.done),overdue=pending.filter(t=>t.date&&t.date<today());$('greeting').textContent=random(brainrot.open);$('quote').textContent=overdue.length?random(brainrot.overdue):'The syllabus isn’t going to defeat itself.';$('streak').textContent=S.streak+' 🔥';$('moodTag').textContent=S.mood.split(' ').slice(1).join(' ')||S.mood;$('studyHours').textContent=(S.studyMs/3600000).toFixed(1)+'h';
@@ -376,23 +380,152 @@ function render(){
  $('collection').innerHTML=S.rewards.map(x=>`<span class="tag" style="margin:3px">${esc(x)}</span>`).join('');
  renderCalendar();renderSelectedEvents();
 }
-applyTheme();render();
-</script>
-<script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js"))}</scr BBipt><script>
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./sw.js", {
-      updateViaCache: "none"
-    }).then(registration => {
-      console.log("Mimori service worker registered");
-
-      registration.update();
-    }).catch(error => {
-      console.error("Service worker registration failed:", error);
-    });
-  });
+/* MIMORI v3 feature/bug patch */
+const MIMORI={
+  buddies:[
+    ['mochi','Mochi','calm','Soft, calm, and always by your side','🐱'],['boba','Boba','playful','Loves breaks, but gets things done!','🧋'],['niko','Niko','focused','Focus mode: always on','🐈'],['pudding','Pudding','gentle','Sweet, gentle, and super dedicated','🐶'],['luna','Luna','dreamy','Dream big, study hard','🐰'],['cloudie','Cloudie','dreamy','Daydreamer with big goals','☁️'],['peach','Peach','positive','Positive vibes only','🍑'],['smokey','Smokey','quiet','Quiet, introvert, but gets it done','🐈'],['pika','Pika','energetic','Energetic and always curious','🐥'],['berry','Berry','organized','Organized, smart, and unstoppable','🦊']
+  ],
+  buddyMessages:{calm:['we got this. one tiny step at a time ♡','no rush. just start.','proud of you for showing up.'],playful:['break later, bestie. first we cook 😭','okayyy focus time!!','we study, then we snack. deal?'],focused:['phone down. brain on.','lock in. we have work to do.','one focused session > ten distracted ones.'],gentle:['you do not have to do everything today ♡','tiny progress still counts.','be kind to your future self.'],dreamy:['future you is gonna LOVE this effort.','big goals, tiny steps ✦','imagine how good it feels when this is done.'],positive:['WE ARE SO BACK 📈','good vibes, better grades.','you showed up. W.'],quiet:['quiet room. loud progress.','just us and the syllabus.','no need to rush. keep going.'],energetic:['LET’S GOOOOOO 🔥','brain battery: ON.','okay academic weapon, move!'],organized:['let’s clear the next task.','one thing at a time, neatly.','plan it. do it. done.']},
+  randomQuestionTemplates:[
+    ['math','quick check: what topic were we just studying? 👀'],
+    ['physics','waittt, explain that concept back to me in one sentence?'],
+    ['chemistry','okay smartie, what was the key idea from that chapter?'],
+    ['default','tiny brain check: what’s one thing you remember from your last session?']
+  ],
+  shop:[['bow','🎀','Tiny Bow',80],['sparkle','✨','Sparkle Theme',120],['cafe','☕','Café Desk',160],['moon','🌙','Moonlight',180],['paw','🐾','Buddy Accessory',220],['flower','🌸','Flower Decor',250]]
+};
+Object.assign(S,{buddyId:S.buddyId||'niko',buddyName:S.buddyName||'Niko',studyLog:S.studyLog||{},streakFreezes:Number.isFinite(S.streakFreezes)?S.streakFreezes:1,water:S.water||{},waterGoal:S.waterGoal||2000,pomodoro:S.pomodoro||{focus:25,short:5,long:15},shopOwned:S.shopOwned||['starter'],shopEquipped:S.shopEquipped||{},settings:S.settings||{notifications:false,study:true,water:true,breaks:true,exams:true},lastQuestionAt:S.lastQuestionAt||0});
+function msave(){localStorage.setItem(KEY,JSON.stringify(S));localStorage.setItem('mimori-v3',JSON.stringify(S));render()}
+function msaveQuiet(){localStorage.setItem(KEY,JSON.stringify(S));localStorage.setItem('mimori-v3',JSON.stringify(S))}
+function buddy(){return MIMORI.buddies.find(x=>x[0]===S.buddyId)||MIMORI.buddies[2]}
+function buddyMsg(kind='open'){let b=buddy();let pool=MIMORI.buddyMessages[b[2]]||MIMORI.buddyMessages.focused;return random(pool)}
+function minutesToday(){return Math.floor((S.studyLog[today()]||0)/60000)}
+function recordStudy(ms){if(ms<=0)return;S.studyMs=(S.studyMs||0)+ms;S.studyLog[today()]=(S.studyLog[today()]||0)+ms}
+function actualStreak(){
+  let d=new Date(); let count=0;
+  for(let i=0;i<3660;i++){
+    let key=localDate(d), mins=Math.floor((S.studyLog[key]||0)/60000);
+    if(mins>=30){count++;d.setDate(d.getDate()-1);continue}
+    if(i===0)return S.streak||0;
+    if(S.lastStudy===key && count===0)return S.streak||0;
+    break;
+  }
+  return count;
 }
-</script>
+function updateStreak(){
+  const t=today(); if(minutesToday()<30){return false}
+  if(S.lastStudy===t){S.streak=Math.max(S.streak,actualStreak());return true}
+  let prev=new Date();prev.setDate(prev.getDate()-1);let p=localDate(prev);
+  if(S.lastStudy===p || Math.floor((S.studyLog[p]||0)/60000)>=30){S.streak=Math.max(1,(S.streak||0)+1)}
+  else if(S.lastStudy && S.lastStudy!==t){
+    let gapDays=Math.round((new Date(t+'T12:00')-new Date(S.lastStudy+'T12:00'))/86400000);
+    if(gapDays===1 && S.streakFreezes>0){ /* freeze is used explicitly through the banner */ }
+    else S.streak=1;
+  } else S.streak=1;
+  S.lastStudy=t; return true;
+}
+function maybeFreeze(){
+  if(S.lastStudy===today() || S.streakFreezes<1 || !S.lastStudy)return false;
+  let d=new Date();d.setDate(d.getDate()-1);let p=localDate(d);
+  if(S.lastStudy===p && minutesToday()<30 && Math.floor((S.studyLog[p]||0)/60000)>=30){S.streakFreezes--;S.lastStudy=today();toast('Streak freeze used ❄️');msave();return true}
+  return false;
+}
+function planningXP(){return 0} // planning never grants meaningful XP
+function studyXP(ms){return Math.max(5,Math.floor(ms/60000/5)*10)}
+function taskXP(t){return 0}
 
-</body>
-</html>
+/* Correct real elapsed timer */
+timer={id:null,durationMs:0,running:false,startedAt:0,accumulatedMs:0};
+function startTimer(m){
+  if(timer.running)return;
+  timer={id:null,durationMs:m*60000,running:true,startedAt:Date.now(),accumulatedMs:0};
+  modal(`<div style="text-align:center"><img src="assets/buddies/${buddy()[0]}.png" style="width:120px;height:120px;object-fit:cover;border-radius:24px"><div class="tiny">${esc(buddyMsg('lock'))}</div><h2>YOU'RE LOCKED IN 🫡</h2><div id="timer" style="font-size:48px;font-weight:850">--:--</div><div class="progress"><div class="bar" id="timerBar" style="width:100%"></div></div><div class="tiny">Only actual focused time counts. Pause or end whenever you need.</div><div class="actions" style="justify-content:center"><button class="btn soft" onclick="pauseTimer()" id="pauseBtn">⏸ Pause</button><button class="btn danger" onclick="finishTimer(false)">End session</button></div></div>`);
+  tickTimer();timer.id=setInterval(tickTimer,250);
+}
+function elapsedTimer(){return Math.min(timer.durationMs,timer.accumulatedMs+(timer.running?Date.now()-timer.startedAt:0))}
+function pauseTimer(){if(!timer.running)return;timer.accumulatedMs=Math.min(timer.durationMs,elapsedTimer());timer.running=false;if(timer.id)clearInterval(timer.id);timer.id=null;if($('pauseBtn')){$('pauseBtn').textContent='▶ Resume';$('pauseBtn').onclick=resumeTimer} }
+function resumeTimer(){if(timer.running)return;timer.running=true;timer.startedAt=Date.now();if($('pauseBtn')){$('pauseBtn').textContent='⏸ Pause';$('pauseBtn').onclick=pauseTimer}timer.id=setInterval(tickTimer,250)}
+function tickTimer(){if(!timer.running)return;let left=Math.max(0,timer.durationMs-elapsedTimer()),mins=Math.floor(left/60000),secs=Math.floor(left/1000)%60;if($('timer')){$('timer').textContent=`${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}`;if($('timerBar'))$('timerBar').style.width=`${Math.max(0,left/timer.durationMs*100)}%`}if(left<=0)finishTimer(true)}
+function finishTimer(completed=false){if(timer.id)clearInterval(timer.id);let elapsed=elapsedTimer();timer={id:null,durationMs:0,running:false,startedAt:0,accumulatedMs:0};if(elapsed>0){recordStudy(elapsed);S.studySessions.push({id:uid(),name:'Lock-In',date:today(),time:new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}),duration:Math.round(elapsed/60000*10)/10,type:'study',actualMs:elapsed,done:true});let xp=studyXP(elapsed);S.xp+=xp;if(minutesToday()>=30)updateStreak();if(completed)toast(`${buddyMsg('finish')} +${xp} XP`);else toast(`${Math.round(elapsed/1000)}s studied. Still counts ✦`)}closeModal();msave()}
+
+/* Clearer task editor + image attachment */
+function openTask(id=null){let t=id?S.tasks.find(x=>x.id===id):null;modal(`<h2>${t?'✏️ Edit task':'➕ New task'}</h2><form class="form" onsubmit="saveTask(event,'${id||''}')"><label>Task name<input id="tn" placeholder="e.g. Finish Physics assignment" value="${esc(t?.name||'')}" required></label><label>Due date<input id="td" type="date" value="${t?.date||today()}"></label><label>Due time<input id="tt" type="time" value="${t?.time||''}"></label><label>Subject<select id="ts"><option value="">No subject</option>${S.subjects.map(s=>`<option value="${esc(s.name)}" ${s.name===t?.subject?'selected':''}>${esc(s.name)}</option>`).join('')}</select></label><label>Priority<select id="tp">${['Normal','High','Low'].map(x=>`<option ${x===t?.priority?'selected':''}>${x}</option>`).join('')}</select></label><label>Estimated duration (minutes)<input id="te" type="number" min="5" value="${t?.est||25}"></label><label>Description / Notes<textarea id="tno" placeholder="Anything you need to remember...">${esc(t?.note||'')}</textarea><label>Assignment images <input id="timg" type="file" accept="image/*" multiple></label><div id="existingTaskImages">${(t?.images||[]).map((x,i)=>`<div class="attach"><img src="${x}" onclick="window.open(this.src)"><button type="button" class="btn danger" onclick="removeTaskImage('${id}',${i})">Delete</button></div>`).join('')}</div>${formButtons(t?'Save changes':'Add task')}</form>`)}
+async function saveTask(e,id){e.preventDefault();let t=id?S.tasks.find(x=>x.id===id):{id:uid(),done:false,images:[]};let files=[...($('timg')?.files||[])];for(const f of files){if(f.size>6*1024*1024){toast('That image is too large. Choose a smaller one.');continue}let data=await compressImage(f);(t.images||(t.images=[])).push(data)}Object.assign(t,{name:tn.value,date:td.value,time:tt.value,subject:ts.value,priority:tp.value,est:+te.value||25,note:tno.value});if(!id)S.tasks.push(t);closeModal();msave();toast(id?'Task updated ✦':'Task added ✨')}
+function removeTaskImage(id,i){let t=S.tasks.find(x=>x.id===id);if(t){t.images.splice(i,1);msave();openTask(id)}}
+function compressImage(file){return new Promise((resolve,reject)=>{let r=new FileReader();r.onload=()=>{let im=new Image();im.onload=()=>{let max=1200,scale=Math.min(1,max/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*scale);c.height=Math.round(im.height*scale);c.getContext('2d').drawImage(im,0,0,c.width,c.height);resolve(c.toDataURL('image/jpeg',.72))};im.onerror=reject;im.src=r.result};r.onerror=reject;r.readAsDataURL(file)})}
+
+/* Subject syllabus attachment */
+function openSubject(id=null){let s=id?S.subjects.find(x=>x.id===id):null;modal(`<h2>${s?'✏️ Edit subject':'📚 New subject'}</h2><form class="form" onsubmit="saveSubject(event,'${id||''}')"><label>Subject name<input id="sn" placeholder="e.g. Thermodynamics" value="${esc(s?.name||'')}" required></label><label>Units / chapters / topics<textarea id="su" placeholder="One per line">${esc((s?.units||[]).map(u=>u.name).join('\n'))}</textarea></label><label>Syllabus file (PDF or image)<input id="syfile" type="file" accept="application/pdf,image/*"></label><div id="syPreview">${s?.syllabus?`📎 ${esc(s.syllabus.name)} <button type="button" class="btn danger" onclick="removeSyllabus('${id}')">Delete</button>`:''}</div>${formButtons(s?'Save changes':'Add subject')}</form>`)}
+async function saveSubject(e,id){e.preventDefault();let units=su.value.split('\n').map(x=>x.trim()).filter(Boolean);let old=id?S.subjects.find(x=>x.id===id):null;let data=units.map(n=>{let prev=old?.units.find(u=>u.name===n);return {id:prev?.id||uid(),name:n,done:!!prev?.done,revised:!!prev?.revised}});let s=old||{id:uid()};Object.assign(s,{name:sn.value,units:data});let f=$('syfile')?.files?.[0];if(f){if(f.size>4*1024*1024){toast('PDF/image is over 4 MB. Please choose a smaller file.');return}let r=new FileReader();r.onload=()=>{s.syllabus={name:f.name,type:f.type,data:r.result};if(!old)S.subjects.push(s);closeModal();msave();toast('Subject saved 📚')};r.readAsDataURL(f);return}if(!old)S.subjects.push(s);closeModal();msave();toast(id?'Subject updated ✦':'Subject added 📚')}
+function removeSyllabus(id){let s=S.subjects.find(x=>x.id===id);if(s){delete s.syllabus;msave();openSubject(id)}}
+
+/* Buddy */
+function openBuddy(){modal(`<h2>🐾 Choose your study buddy</h2><div class="buddygrid">${MIMORI.buddies.map(b=>`<button type="button" class="buddychoice ${S.buddyId===b[0]?'selected':''}" onclick="chooseBuddy('${b[0]}')"><img src="assets/buddies/${b[0]}.png"><b>${b[1]}</b><span>${b[3]}</span></button>`).join('')}</div><div class="actions"><button class="btn soft" onclick="renameBuddy()">✏️ Rename ${esc(S.buddyName)}</button></div>`)}
+function chooseBuddy(id){S.buddyId=id;S.buddyName=MIMORI.buddies.find(x=>x[0]===id)[1];msave();openBuddy();toast(`${esc(S.buddyName)} is now your buddy 🐾`)}
+function renameBuddy(){modal(`<h2>🎀 Name your buddy</h2><form class="form" onsubmit="saveBuddyName(event)"><label>What should I call them?<input id="bn" maxlength="24" value="${esc(S.buddyName)}" required></label>${formButtons('Save name')}</form>`)}
+function saveBuddyName(e){e.preventDefault();S.buddyName=bn.value.trim()||buddy()[1];closeModal();msave();toast('Buddy name saved ✦')}
+function buddyQuestion(){let candidates=S.subjects.flatMap(s=>s.units.filter(u=>u.done).map(u=>({subject:s.name,topic:u.name})));if(!candidates.length){toast('Finish a chapter first and I’ll quiz you 👀');return}let c=random(candidates);let q=`I know you studied ${c.topic} in ${c.subject}... tell me ONE thing you remember about it? 👀`;modal(`<div style="text-align:center"><img src="assets/buddies/${buddy()[0]}.png" style="width:150px;height:135px;object-fit:cover;border-radius:24px"><h2>${esc(S.buddyName)} asks…</h2><p>${esc(q)}</p><textarea id="bq" placeholder="Type your answer..."></textarea><div class="actions"><button class="btn" onclick="toast('W. Teaching ${esc(S.buddyName)} counts as revision 🧠');closeModal()">Answer</button><button class="btn soft" onclick="closeModal()">Later</button></div></div>`)}
+
+/* Water */
+function waterToday(){return S.water[today()]||0}
+function openWater(){modal(`<h2>💧 Water</h2><div class="waterwrap"><div class="bottle"><div class="waterfill" id="waterFill" style="height:${Math.min(100,waterToday()/S.waterGoal*100)}%"></div><div class="bottlemark">${waterToday()} ml</div></div><div><h2>${waterToday()} / ${S.waterGoal} ml</h2><div class="progress"><div class="bar" id="waterBar" style="width:${Math.min(100,waterToday()/S.waterGoal*100)}%"></div></div><div class="actions left"><button class="btn" onclick="addWater(250)">+250 ml</button><button class="btn soft" onclick="addWater(100)">+100 ml</button><button class="btn danger" onclick="addWater(-250)">−250 ml</button></div><button class="btn soft" onclick="setWaterGoal()">⚙️ Daily goal</button></div></div>`)}
+function addWater(n){S.water[today()]=Math.max(0,(S.water[today()]||0)+n);msave();openWater()}
+function setWaterGoal(){modal(`<h2>💧 Water goal</h2><form class="form" onsubmit="saveWaterGoal(event)"><label>Your daily goal (ml)<input id="wg" type="number" min="100" max="10000" value="${S.waterGoal}"></label><div class="tiny">Choose a goal that works for you. This is just a personal tracker, not a medical recommendation.</div>${formButtons('Save')}</form>`)}
+function saveWaterGoal(e){e.preventDefault();S.waterGoal=Math.max(100,+wg.value||2000);closeModal();msave();toast('Water goal updated 💧')}
+
+/* Pomodoro */
+function openPomodoro(){let p=S.pomodoro;modal(`<h2>🍅 Pomodoro</h2><div class="statrow"><div class="stat"><b>${p.focus}m</b><span class="label">Focus</span></div><div class="stat"><b>${p.short}m</b><span class="label">Short break</span></div><div class="stat"><b>${p.long}m</b><span class="label">Long break</span></div></div><div class="actions"><button class="btn" onclick="startPomo('focus')">▶ Focus</button><button class="btn soft" onclick="startPomo('short')">☕ Short break</button><button class="btn soft" onclick="startPomo('long')">🌙 Long break</button><button class="btn soft" onclick="editPomo()">⚙️ Settings</button></div>`)}
+function editPomo(){let p=S.pomodoro;modal(`<h2>🍅 Pomodoro settings</h2><form class="form"><label>Focus<input id="pf" type="number" min="1" max="180" value="${p.focus}"></label><label>Short break<input id="ps" type="number" min="1" max="60" value="${p.short}"></label><label>Long break<input id="pl" type="number" min="1" max="60" value="${p.long}"></label><div class="actions"><button type="button" class="btn" onclick="S.pomodoro={focus:+pf.value,short:+ps.value,long:+pl.value};msave();openPomodoro()">Save</button></div></form>`)}
+function startPomo(type){let mins=S.pomodoro[type];if(type==='focus')startTimer(mins);else startBreakTimer(mins,type)}
+function startBreakTimer(mins,type){let end=Date.now()+mins*60000;modal(`<div style="text-align:center"><div style="font-size:70px">${type==='short'?'☕':'🌙'}</div><h2>${type==='short'?'Short break':'Long break'}</h2><div id="breakTimer" style="font-size:48px;font-weight:850">--:--</div><div class="tiny">Break time does not count as study.</div><div class="actions"><button class="btn" onclick="closeModal()">Skip</button></div></div>`);let id=setInterval(()=>{let left=Math.max(0,end-Date.now()),m=Math.floor(left/60000),s=Math.floor(left/1000)%60;if($('breakTimer'))$('breakTimer').textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;if(left<=0){clearInterval(id);toast('Break over. Ready when you are ✦');closeModal()}},250)}
+
+/* Reward shop / progression */
+function petLevel(){return Math.floor(S.xp/100)+1}
+function openShop(){modal(`<h2>🛒 Reward Shop</h2><div class="shopgrid">${MIMORI.shop.map(r=>{let owned=S.shopOwned.includes(r[0]);return `<div class="choice"><div style="font-size:35px">${r[1]}</div><b>${r[2]}</b><div class="tiny">${owned?'Owned':r[3]+' XP'}</div><button class="btn ${owned?'soft':''}" ${owned?'disabled':''} onclick="buyReward('${r[0]}',${r[3]})">${owned?'Owned':'Buy'}</button></div>`}).join('')}</div>`)}
+function buyReward(id,cost){if(S.shopOwned.includes(id))return;if(S.xp<cost){toast('Not enough XP yet ✦');return}S.xp-=cost;S.shopOwned.push(id);msave();openShop();toast('Cosmetic unlocked ✨')}
+
+/* Notifications */
+async function requestNotifications(){if(!('Notification' in window)){toast('Notifications are not supported here.');return}let p=await Notification.requestPermission();S.settings.notifications=p==='granted';msave();toast(p==='granted'?'Notifications enabled 🔔':'Notifications left off')}
+function notify(title,body){if(S.settings.notifications && 'Notification' in window && Notification.permission==='granted')new Notification(title,{body,icon:'assets/mimori-icon.png'})}
+function openSettings(){modal(`<h2>🔔 Reminders</h2><div class="list"><label class="checkrow"><input type="checkbox" ${S.settings.study?'checked':''} onchange="S.settings.study=this.checked;msaveQuiet()"> Study reminders</label><label class="checkrow"><input type="checkbox" ${S.settings.water?'checked':''} onchange="S.settings.water=this.checked;msaveQuiet()"> Water reminders</label><label class="checkrow"><input type="checkbox" ${S.settings.breaks?'checked':''} onchange="S.settings.breaks=this.checked;msaveQuiet()"> Break reminders</label><label class="checkrow"><input type="checkbox" ${S.settings.exams?'checked':''} onchange="S.settings.exams=this.checked;msaveQuiet()"> Exam reminders</label></div><div class="actions"><button class="btn" onclick="requestNotifications()">${S.settings.notifications?'Notifications enabled':'Enable notifications'}</button></div><div class="tiny">Browser notifications require permission and may not fire reliably when the app is fully closed.</div>`)}
+
+/* Better XP: completing tasks gives no study XP */
+function toggleTask(id){let t=S.tasks.find(x=>x.id===id);if(!t)return;t.done=!t.done;/* planning/completion isn't study time */msave();toast(t.done?'Task done ✦':'Task reopened')}
+
+/* Correct attendance helpers */
+function safeMiss(a){let r=(a.required||75)/100;if(a.total<=0)return 0;if(r>=1)return 0;return Math.max(0,Math.floor(a.attended/r-a.total))}
+function needAttend(a){let r=(a.required||75)/100;if(a.total===0||a.attended/a.total>=r)return 0;if(r>=1)return Infinity;return Math.max(0,Math.ceil((r*a.total-a.attended)/(1-r)))}
+
+/* Smarter home */
+function smartHome(){let p=S.tasks.filter(t=>!t.done).sort((a,b)=>(a.date||'9999').localeCompare(b.date||'9999')).slice(0,3);let exams=S.exams.filter(e=>e.date>=today()).sort((a,b)=>a.date.localeCompare(b.date)).slice(0,1);let nextClass=S.lectures.filter(l=>l.date>=today()&&l.status==='pending').sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time))[0];return {p,exams,nextClass}}
+
+/* Add extra UI without replacing the existing app */
+function installMimoriUI(){
+  document.title='mimori 🎀';
+  document.querySelector('meta[name="description"]')?.setAttribute('content','mimori — your cozy study and college-life companion');
+  let link=document.querySelector('link[rel="manifest"]');if(link)link.href='manifest.webmanifest';
+  let brand=document.querySelector('.brand');if(brand)brand.innerHTML=`<img class="logoimg" src="assets/mimori-icon.png" alt="mimori" onerror="this.style.display='none'"><div><h1>mimori</h1><div class="sub">your cozy little study companion ✦</div></div>`;
+  document.querySelector('#subjects .card:nth-of-type(3)')?.remove();
+  const nav=document.querySelector('.nav');
+  if(nav && !document.getElementById('mimoriMoreBtn')){let b=document.createElement('button');b.id='mimoriMoreBtn';b.textContent='🎀 More';b.onclick=()=>openMore();nav.appendChild(b)}
+  if(!$('mimoriExtras')){let sec=document.createElement('section');sec.id='mimoriExtras';sec.className='card';sec.style.marginTop='14px';sec.innerHTML='<div id="mimoriExtraContent"></div>';document.querySelector('#home .grid').appendChild(sec)}
+  let more=document.createElement('section');more.id='mimori-more';more.className='section';more.innerHTML=`<div class="grid"><div class="card span6"><div class="row"><h2>💧 Water</h2><button class="btn" onclick="openWater()">Track</button></div><div id="waterMini"></div></div><div class="card span6"><div class="row"><h2>🍅 Pomodoro</h2><button class="btn" onclick="openPomodoro()">Open</button></div><div class="tiny">Focus + breaks, connected to Lock-In.</div></div><div class="card span6"><div class="row"><h2>🐾 Buddy</h2><button class="btn" onclick="openBuddy()">Customize</button></div><div id="buddyMini"></div><button class="btn soft" onclick="buddyQuestion()">🧠 Ask me a question</button></div><div class="card span6"><div class="row"><h2>🛒 Reward Shop</h2><button class="btn" onclick="openShop()">Shop</button></div><div class="tiny">Spend XP only on cosmetics.</div></div><div class="card span12"><div class="row"><div><h2>🔔 Notifications</h2><div class="tiny">Optional browser reminders.</div></div><button class="btn" onclick="openSettings()">Settings</button></div></div></div>`;document.querySelector('.app').insertBefore(more,document.querySelector('.nav'));
+}
+function openMore(){document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));$('mimori-more').classList.add('active');document.querySelectorAll('.nav button').forEach(x=>x.classList.remove('active'));$('mimoriMoreBtn').classList.add('active');renderMore()}
+function renderMore(){if(!$('mimori-more'))return;let w=waterToday();$('waterMini').innerHTML=`<div class="row"><b>${w} ml</b><span class="tiny">goal ${S.waterGoal} ml</span></div><div class="progress"><div class="bar" style="width:${Math.min(100,w/S.waterGoal*100)}%"></div></div>`;$('buddyMini').innerHTML=`<div class="buddymini"><img src="assets/buddies/${buddy()[0]}.png"><div><b>${esc(S.buddyName)}</b><div class="tiny">${esc(buddy()[3])}</div><div class="tag">Lv ${petLevel()} · ${S.xp} XP</div></div></div>`}
+function renderMimoriExtras(){let x=$('mimoriExtraContent');if(!x)return;let h=minutesToday();let info=smartHome();let q=h>=30?'30 min goal reached ✦':`${Math.max(0,30-h)} min until today’s streak goal`;let y=new Date();y.setDate(y.getDate()-1);let yk=localDate(y);let freeze=(S.streakFreezes>0&&S.lastStudy===yk&&Math.floor((S.studyLog[yk]||0)/60000)>=30&&h<30);x.innerHTML=`<div class="row wrap"><div><h3>✦ TODAY</h3><div class="tiny">${q}</div></div><div class="actions"><button class="btn soft" onclick="openWater()">💧 ${waterToday()} ml</button><button class="btn soft" onclick="openPomodoro()">🍅 ${S.pomodoro.focus}m</button></div></div><div class="list" style="margin-top:10px">${info.p.length?info.p.map(t=>`<div class="item"><span>☐</span><div style="flex:1"><b>${esc(t.name)}</b><div class="tiny">${esc(t.date||'No date')}</div></div><button class="btn soft" onclick="openTask('${t.id}')">✏️</button></div>`).join(''):'<div class="empty">Nothing urgent. suspiciously peaceful 👀</div>'}${info.nextClass?`<div class="item">🏫 <div><b>Next class: ${esc(info.nextClass.name)}</b><div class="tiny">${esc(info.nextClass.date)} · ${esc(info.nextClass.time)}</div></div></div>`:''}${info.exams.length?`<div class="item">⚔️ <div><b>${esc(info.exams[0].name)}</b><div class="tiny">${daysLeft(info.exams[0].date)} days left</div></div></div>`:''}${freeze?`<div class="item">❄️ <div style="flex:1"><b>Streak freeze available</b><div class="tiny">Protect yesterday’s streak while you reset today.</div></div><button class="btn" onclick="useFreeze()">Use freeze</button></div>`:''}</div>`}
+
+const _oldRender=render;
+render=function(){_oldRender();try{$('pet').innerHTML=`<img src="assets/buddies/${buddy()[0]}.png" alt="${esc(S.buddyName)}" style="width:110px;height:105px;object-fit:cover;border-radius:22px">`;$('petMsg').textContent=buddyMsg('open');renderMimoriExtras();renderMore()}catch(e){console.warn('Mimori render extras',e)}};
+
+/* Daily freeze banner / streak behavior */
+function useFreeze(){if(S.streakFreezes<1){toast('No freezes left ✦');return}let y=new Date();y.setDate(y.getDate()-1);let yk=localDate(y);if(S.lastStudy===yk&&Math.floor((S.studyLog[yk]||0)/60000)>=30){S.streakFreezes--;S.streak=(S.streak||1);S.lastStudy=today();msave();toast('Streak protected ❄️')}else toast('No eligible missed day for a freeze.')}
+function checkStreakOnLoad(){let yesterday=new Date();yesterday.setDate(yesterday.getDate()-1);let y=localDate(yesterday);if(S.lastStudy===y&&Math.floor((S.studyLog[y]||0)/60000)>=30&&minutesToday()<30&&S.streakFreezes>0){toast('The streak took a nap. You have a freeze available ❄️')}}
+
+installMimoriUI();
+checkStreakOnLoad();
+applyTheme();render();
+
+</script>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js"))}</script>
+</body></html>
