@@ -1,0 +1,14 @@
+{
+  "name":"mimori",
+  "short_name":"mimori",
+  "start_url":"./",
+  "scope":"./",
+  "display":"standalone",
+  "background_color":"#fff9f6",
+  "theme_color":"#f3bfd2",
+  "description":"mimori — your cozy study and college-life companion",
+  "icons":[
+    {"src":"assets/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"assets/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ]
+}
